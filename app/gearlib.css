@@ -137,9 +137,8 @@ button, input, select { font: inherit; color: inherit; }
 .grid td.c-class, .grid td.c-slot, .grid td.c-focus, .grid td.c-skill, .grid td.c-magic, .grid td.c-id, .grid td.c-level { color: var(--parch-dim); }
 .grid td.c-owner { color: var(--parch); }
 .grid .eq { color: var(--cyan); font-size: 0.8em; border: 1px solid var(--cyan); border-radius: 2px; padding: 0 0.2em; margin-left: 0.1em; }
-.rune { font-size: 0.92em; padding: 0 0.35em; border-radius: 3px; border: 1px solid var(--brass-dim); background: rgba(42, 38, 18, 0.7); white-space: nowrap; }
-.rune.proc { border-color: rgba(0, 204, 255, 0.45); color: #c8f1ff; }
-.rune.hit { border-color: var(--cyan); background: var(--cyan-well); color: #fff; }
+.rune { white-space: nowrap; color: var(--parch); }
+.rune.hit { color: var(--cyan); font-weight: 700; }
 .grid tr.detailrow td { white-space: normal; background: var(--well); padding: 0; position: sticky; left: 0; }
 .grid tr.detailrow .detail { max-width: 70em; }
 .detail { padding: 0.45em 0.5em 0.85em; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17em), 1fr)); gap: 0.7em 1.5em; font-size: 0.88em; }

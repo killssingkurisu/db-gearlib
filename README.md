@@ -37,4 +37,4 @@ node test/run.js             # scan matching and the dropdown filters against th
 node tools/build-single.js   # optional: dist/gear-library.html, one self-contained file
 ```
 
-No dependencies. The Actions workflow checks that `app/data` is up to date, runs the tests and publishes the repository root to GitHub Pages (Settings → Pages → Source: GitHub Actions).
+No dependencies. The Actions workflow checks that `app/data` is up to date, runs the tests and builds one self-contained page (`tools/build-single.js`) and publishes it with `gear.csv` to GitHub Pages (Settings → Pages → Source: GitHub Actions). One file means a browser can never mix a cached old script with a new page.
