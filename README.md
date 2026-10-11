@@ -16,7 +16,8 @@ Live page (once GitHub Pages is on): https://killssingkurisu.github.io/db-gearli
   - the line under the box shows how the search reads, with the grouping spelled out
 - **Chips.** One click includes a value, a second click leaves it out, a third clears it. Chips in a group are or; groups are and with each other and with the search. Runes and Magic have an Any / All switch. The number on a chip is how many items it would match with everything else as it is.
 - **Scans.** The three bundled scans (MaxMage, MaxRogue, Search Your Gear For) are on by default. Import more with *Import scans* or drop `DB inventory … .json` files on the page; an imported scan replaces the one of the same character. Imports stay in this browser. Turn any scan off with its dot.
-- Click a row for gear ID, rune and skill rune text, and who owns how many.
+- **Table.** One line per item, a column per field (Name, Class, Slot, Rarity, Focus, Lv, Atk, Exp, Def, Total, Rune 1, Rune 2, Skill rune, Magic, Owned by, ID). Click a header to sort by it, again to reverse; stat columns start highest first and unknown stats always sort last. The name column stays put when the table scrolls sideways. Click a name for gear ID, rune and skill rune text, and who owns how many.
+- **CSV.** *Copy CSV* copies every matching row (not only the ones shown) with the same columns, ready to paste into a spreadsheet. *Download CSV* saves the same as a file; it shows only when the page is opened on its own, since framed previews can't save files.
 
 ## Stats
 

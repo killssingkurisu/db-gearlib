@@ -35,10 +35,11 @@
         picks: {},
         modes: Object.assign({ rune: 'any', magic: 'any' }, saved.modes || {}),
         nums: Object.assign({}, saved.nums || {}),
-        sort: saved.sort || 'default',
+        sort: saved.sort || 'default',  // a column key, or 'default'
         dir: saved.dir === -1 ? -1 : 1,
         shown: PAGE,
         open: new Set(),
+        alt: new Set(), // rows drawn with the darker stripe, so a re-drawn row keeps its stripe
     };
     if (saved.picks && typeof saved.picks === 'object') {
         for (const [k, list] of Object.entries(saved.picks)) {
@@ -240,28 +241,68 @@
         return def._flat;
     }
 
+    /* ---------- columns (table and CSV) ---------- */
+
+    const ownerText = (it) => it.owners.map((o) => o.name + (o.count > 1 ? ' x' + o.count : '') + (o.equipped ? ' (equipped)' : '')).join('; ');
+    const stat = (it, f) => (it.stats ? (f === 'total' ? it.total : it.stats[f]) : null);
+    const COLS = [
+        { key: 'name', label: 'Name', text: (it) => it.name },
+        { key: 'class', label: 'Class', text: (it) => it.cls, order: (it) => M.CLASSES.indexOf(it.cls) },
+        { key: 'slot', label: 'Slot', text: (it) => M.SLOT_NAME[it.slot], order: (it) => M.SLOTS.indexOf(it.slot) },
+        { key: 'rarity', label: 'Rarity', text: (it) => M.RARITY_NAME[it.rarity], order: (it) => -it.tier },
+        { key: 'focus', label: 'Focus', text: (it) => M.FOCUS_NAME[it.focus] },
+        { key: 'level', label: 'Lv', num: true, value: (it) => it.level },
+        { key: 'attack', label: 'Atk', num: true, high: true, cls: 'atk-t', value: (it) => stat(it, 'attack') },
+        { key: 'expertise', label: 'Exp', num: true, high: true, cls: 'exp-t', value: (it) => stat(it, 'expertise') },
+        { key: 'defense', label: 'Def', num: true, high: true, cls: 'def-t', value: (it) => stat(it, 'defense') },
+        { key: 'total', label: 'Total', num: true, high: true, value: (it) => stat(it, 'total') },
+        { key: 'rune1', label: 'Rune 1', text: (it) => it.runeNames[0] || '' },
+        { key: 'rune2', label: 'Rune 2', text: (it) => it.runeNames[1] || '' },
+        { key: 'skill', label: 'Skill rune', text: (it) => it.skillName },
+        { key: 'magic', label: 'Magic', text: (it) => it.magicName },
+        { key: 'owner', label: 'Owned by', text: ownerText, order: (it) => (it.owners.length ? 0 : 1) },
+        { key: 'id', label: 'ID', num: true, value: (it) => it.id },
+    ];
+    const COL = Object.fromEntries(COLS.map((c) => [c.key, c]));
+
     function sortItems(list) {
-        const k = state.sort;
-        const dir = state.dir;
         const slotOrder = (s) => M.SLOTS.indexOf(s);
         const clsOrder = (c) => M.CLASSES.indexOf(c);
-        const statOf = (it, f) => (it.stats ? (f === 'total' ? it.total : it.stats[f]) : null);
         const cmpDefault = (a, b) => clsOrder(a.cls) - clsOrder(b.cls) || slotOrder(a.slot) - slotOrder(b.slot)
             || b.tier - a.tier || a.level - b.level || a.name.localeCompare(b.name);
+        const col = COL[state.sort];
+        if (!col) return list.slice().sort(cmpDefault);
+        const dir = state.dir;
         let cmp;
-        if (k === 'name') cmp = (a, b) => dir * a.name.localeCompare(b.name);
-        else if (k === 'level') cmp = (a, b) => dir * (a.level - b.level) || cmpDefault(a, b);
-        else if (k === 'id') cmp = (a, b) => dir * (a.id - b.id) || clsOrder(a.cls) - clsOrder(b.cls) || a.tier - b.tier;
-        else if (['attack', 'expertise', 'defense', 'total'].includes(k)) {
+        if (col.num) {
             cmp = (a, b) => {
-                const x = statOf(a, k), y = statOf(b, k);
+                const x = col.value(a), y = col.value(b);
                 if (x === null && y === null) return cmpDefault(a, b);
-                if (x === null) return 1;
+                if (x === null) return 1; // unknown stats always last
                 if (y === null) return -1;
-                return dir * (y - x) || cmpDefault(a, b); // highest first by default
+                return dir * (x - y) || cmpDefault(a, b);
             };
-        } else cmp = (a, b) => dir * cmpDefault(a, b);
+        } else if (col.order) {
+            cmp = (a, b) => dir * (col.order(a) - col.order(b)) || dir * col.text(a).localeCompare(col.text(b)) || cmpDefault(a, b);
+        } else {
+            cmp = (a, b) => {
+                const x = col.text(a), y = col.text(b);
+                if (!x && y) return 1; // blanks last
+                if (x && !y) return -1;
+                return dir * x.localeCompare(y) || cmpDefault(a, b);
+            };
+        }
         return list.slice().sort(cmp);
+    }
+
+    function csvCell(v) {
+        const t = v === null || v === undefined ? '' : String(v);
+        return /[",\n\r]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t;
+    }
+    function toCsv(list) {
+        const lines = [COLS.map((c) => csvCell(c.label === 'Lv' ? 'Level' : c.label)).join(',')];
+        for (const it of list) lines.push(COLS.map((c) => csvCell(c.num ? c.value(it) : c.text(it))).join(','));
+        return lines.join('\r\n') + '\r\n';
     }
 
     /* ---------- render ---------- */
@@ -299,34 +340,48 @@
         Array.from(list.querySelectorAll('.chips.scroll')).forEach((el, i) => { el.scrollTop = scrolls[i] || 0; });
     }
 
-    function renderStats(it) {
-        if (!it.stats) return '<span class="stats none" title="No scan has this kind of item yet, so its stats are unknown.">—</span>';
-        const s = it.stats;
-        const cell = (v, cls) => '<span class="' + cls + (v ? '' : ' z') + '">' + fmt(v) + '</span>';
-        const title = it.statSource === 'kind'
-            ? 'Stats seen on another ' + M.RARITY_NAME[it.rarity] + ' ' + M.FOCUS_NAME[it.focus] + ' ' + M.SLOT_NAME[it.slot].toLowerCase() + ' of this class'
-            : 'Stats read from a scan of this item';
-        return '<span class="stats' + (it.statSource === 'kind' ? ' kind' : '') + '" title="' + esc(title) + '">'
-            + cell(s.attack, 'atk-t') + cell(s.expertise, 'exp-t') + cell(s.defense, 'def-t') + '</span>';
+    function renderHead() {
+        $('gridHead').innerHTML = COLS.map((c) => {
+            const on = state.sort === c.key;
+            const arrow = on ? (state.dir === 1 ? ' ▲' : ' ▼') : '';
+            const aria = on ? (state.dir === 1 ? 'ascending' : 'descending') : 'none';
+            return '<th scope="col" class="c-' + c.key + (c.num ? ' n' : '') + '" aria-sort="' + aria + '">'
+                + '<button type="button" data-sort="' + c.key + '" class="' + (c.cls || '') + (on ? ' on' : '') + '">' + c.label + arrow + '</button></th>';
+        }).join('');
+        $('sortReset').hidden = !COL[state.sort];
     }
 
-    function renderRow(it, hot) {
-        const runes = it.runes.map((r, i) => '<span class="rune' + (r.startsWith('Proc') ? ' proc' : '') + (hot.has(r) ? ' hit' : '') + '" title="'
-            + esc(DATA.runes[r] ? DATA.runes[r].desc : r) + '">' + esc(it.runeNames[i]) + '</span>').join('');
-        const extra = [];
-        if (it.skill) extra.push('<em>' + esc(it.skillName) + '</em>');
-        if (it.magic) extra.push(esc(it.magicName));
-        const owners = it.owners.length
-            ? it.owners.map((o) => '<span class="o">' + esc(o.name) + (o.count > 1 ? ' ×' + o.count : '') + (o.equipped ? ' <span class="eq">equipped</span>' : '') + '</span>').join('')
-            : '<span class="none">—</span>';
-        const meta = [it.cls, M.SLOT_NAME[it.slot], M.FOCUS_NAME[it.focus], 'Lv ' + it.level].join(' · ');
+    function renderRow(it, hot, pos) {
         const open = state.open.has(it.index);
-        return '<div class="row' + (open ? ' open' : '') + '" role="listitem"><button type="button" class="l1" data-i="' + it.index + '" aria-expanded="' + open + '">'
-            + '<span class="iname"><b class="r-' + it.rarity + '">' + esc(it.name) + '</b><span class="meta">' + esc(meta) + '</span></span>'
-            + renderStats(it)
-            + '<span class="runes"><span class="rl">' + runes + '</span>' + (extra.length ? '<span class="sk">' + extra.join(' · ') + '</span>' : '') + '</span>'
-            + '<span class="owned">' + owners + '</span></button>'
-            + (open ? renderDetail(it) : '') + '</div>';
+        const cells = COLS.map((c) => {
+            let inner;
+            if (c.num) {
+                const v = c.value(it);
+                inner = v === null ? '<span class="z">—</span>' : fmt(v);
+                const kind = c.high && it.statSource === 'kind' ? ' kind' : '';
+                return '<td class="n c-' + c.key + kind + (v === 0 ? ' zero' : '') + '">' + inner + '</td>';
+            }
+            if (c.key === 'name') {
+                return '<td class="c-name"><button type="button" class="l1 r-' + it.rarity + '" data-i="' + it.index + '" aria-expanded="' + open + '">' + esc(it.name) + '</button></td>';
+            }
+            if (c.key === 'rune1' || c.key === 'rune2') {
+                const r = it.runes[c.key === 'rune1' ? 0 : 1];
+                if (!r) return '<td class="c-' + c.key + '"></td>';
+                return '<td class="c-' + c.key + '"><span class="rune' + (r.startsWith('Proc') ? ' proc' : '') + (hot.has(r) ? ' hit' : '') + '" title="'
+                    + esc(DATA.runes[r] ? DATA.runes[r].desc : r) + '">' + esc(c.text(it)) + '</span></td>';
+            }
+            if (c.key === 'rarity') return '<td class="c-rarity r-' + it.rarity + '">' + esc(c.text(it)) + '</td>';
+            if (c.key === 'owner') {
+                return '<td class="c-owner">' + (it.owners.length
+                    ? it.owners.map((o) => esc(o.name) + (o.count > 1 ? ' ×' + o.count : '') + (o.equipped ? ' <span class="eq">E</span>' : '')).join(', ')
+                    : '') + '</td>';
+            }
+            return '<td class="c-' + c.key + '">' + esc(c.text(it)) + '</td>';
+        }).join('');
+        const alt = pos === undefined ? state.alt.has(it.index) : pos % 2 === 1;
+        if (alt) state.alt.add(it.index); else state.alt.delete(it.index);
+        return '<tr class="row' + (open ? ' open' : '') + (alt ? ' alt' : '') + '" data-i="' + it.index + '">' + cells + '</tr>'
+            + (open ? '<tr class="detailrow"><td colspan="' + COLS.length + '">' + renderDetail(it) + '</td></tr>' : '');
     }
 
     function renderDetail(it) {
@@ -371,9 +426,9 @@
         const hot = hotRunes();
         const list = $('list');
         if (!lastResults.length) {
-            list.innerHTML = '<div class="empty">Nothing matches. Loosen a filter, or <button type="button" class="ex" data-reset="1">clear the search and filters</button>.</div>';
+            list.innerHTML = '<tr><td colspan="' + COLS.length + '" class="empty">Nothing matches. Loosen a filter, or <button type="button" class="ex" data-reset="1">clear the search and filters</button>.</td></tr>';
         } else {
-            list.innerHTML = lastResults.slice(0, state.shown).map((it) => renderRow(it, hot)).join('');
+            list.innerHTML = lastResults.slice(0, state.shown).map((it, n) => renderRow(it, hot, n)).join('');
         }
         const left = lastResults.length - state.shown;
         $('more').hidden = left <= 0;
@@ -381,8 +436,7 @@
         renderStatus();
         renderSummary();
         renderScans();
-        $('sort').value = state.sort;
-        $('sortDir').textContent = state.dir === 1 ? '↓' : '↑';
+        renderHead();
         save();
     }
 
@@ -520,19 +574,61 @@
         $(id).addEventListener('input', (e) => { state.nums[id] = e.target.value; rerender(); });
     });
 
-    $('sort').addEventListener('change', (e) => { state.sort = e.target.value; state.dir = 1; rerender(); });
-    $('sortDir').addEventListener('click', () => { state.dir = -state.dir; rerender(); });
+    $('gridHead').addEventListener('click', (e) => {
+        const b = e.target.closest('[data-sort]');
+        if (!b) return;
+        const k = b.dataset.sort;
+        if (state.sort === k) state.dir = -state.dir;
+        else { state.sort = k; state.dir = COL[k].high ? -1 : 1; }
+        rerender();
+    });
+    $('sortReset').addEventListener('click', () => { state.sort = 'default'; state.dir = 1; rerender(); });
     $('more').addEventListener('click', () => { state.shown += PAGE; render(); });
     $('list').addEventListener('click', (e) => {
         const b = e.target.closest('button.l1');
         if (!b) return;
         const i = Number(b.dataset.i);
         if (state.open.has(i)) state.open.delete(i); else state.open.add(i);
-        const it = model.items[i];
-        const row = b.parentElement;
-        row.outerHTML = renderRow(it, hotRunes());
+        const tr = b.closest('tr');
+        const next = tr.nextElementSibling;
+        if (next && next.classList.contains('detailrow')) next.remove();
+        tr.outerHTML = renderRow(model.items[i], hotRunes());
         const again = $('list').querySelector('button.l1[data-i="' + i + '"]');
         if (again) again.focus();
+    });
+
+    $('copyCsv').addEventListener('click', () => {
+        const csv = toCsv(lastResults);
+        const n = fmt(lastResults.length) + (lastResults.length === 1 ? ' row' : ' rows');
+        const fallback = () => {
+            const ta = document.createElement('textarea');
+            ta.value = csv;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            let ok = false;
+            try { ok = document.execCommand('copy'); } catch (_e) { ok = false; }
+            ta.remove();
+            toast(ok ? 'Copied ' + n + ' as CSV.' : 'The browser refused to copy. Use Download CSV on the GitHub page.', !ok);
+        };
+        try {
+            navigator.clipboard.writeText(csv).then(() => toast('Copied ' + n + ' as CSV.'), fallback);
+        } catch (_e) { fallback(); }
+    });
+    // A page framed by another site (a preview) can't save files, so the button only shows standalone.
+    let framed = true;
+    try { framed = window.self !== window.top; } catch (_e) { framed = true; }
+    $('saveCsv').hidden = framed;
+    $('saveCsv').addEventListener('click', () => {
+        const blob = new Blob(['﻿' + toCsv(lastResults)], { type: 'text/csv;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'db-gear-' + lastResults.length + '.csv';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
     });
     $('filterToggle').addEventListener('click', () => {
         const f = $('filters');

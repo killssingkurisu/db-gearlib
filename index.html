@@ -97,23 +97,16 @@
       <div class="head reshead">
         <h2>Gear</h2>
         <span class="sub" id="count"></span>
-        <label class="sortlabel" for="sort">Sort</label>
-        <select id="sort">
-          <option value="default">Class, slot, rarity</option>
-          <option value="name">Name</option>
-          <option value="level">Level</option>
-          <option value="attack">Attack</option>
-          <option value="expertise">Expertise</option>
-          <option value="defense">Defense</option>
-          <option value="total">Total stats</option>
-          <option value="id">Gear ID</option>
-        </select>
-        <button class="iconbtn" id="sortDir" type="button" title="Reverse the order" aria-label="Reverse the order">↓</button>
+        <button class="linkbtn" id="sortReset" type="button" hidden>Default order</button>
+        <button class="btn" id="copyCsv" type="button" title="Copy every matching row as CSV, to paste into a spreadsheet">Copy CSV</button>
+        <button class="btn" id="saveCsv" type="button" title="Save every matching row as a .csv file" hidden>Download CSV</button>
       </div>
-      <div class="cols" aria-hidden="true">
-        <span>Item</span><span class="c-stats"><i class="atk-t">Atk</i><i class="exp-t">Exp</i><i class="def-t">Def</i></span><span>Runes</span><span>Owned by</span>
+      <div class="tablewrap" id="tablewrap">
+        <table class="grid" id="grid">
+          <thead><tr id="gridHead"></tr></thead>
+          <tbody id="list"></tbody>
+        </table>
       </div>
-      <div class="list" id="list" role="list"></div>
       <button class="btn more" id="more" type="button" hidden>Show more</button>
     </section>
   </div>
