@@ -1,0 +1,378 @@
+{
+ "runes": {
+  "ProcMassive": {
+   "name": "Heavy Blow",
+   "desc": "Critical hits deal 60% of the hit as extra damage",
+   "kind": "proc"
+  },
+  "ProcMassiveTime": {
+   "name": "Hemorrhage",
+   "desc": "Critical hits apply Hemorrhage, 112.5% of the hit",
+   "kind": "proc"
+  },
+  "ProcEarth": {
+   "name": "Earthshaker",
+   "desc": "Earth damage on critical hit: 100% vs its opposite, 50% neutral, 25% vs Earth",
+   "kind": "proc"
+  },
+  "ProcAir": {
+   "name": "Typhoon",
+   "desc": "Air damage on critical hit: 100% vs its opposite, 50% neutral, 25% vs Air",
+   "kind": "proc"
+  },
+  "ProcIce": {
+   "name": "Blizzard",
+   "desc": "Ice damage on critical hit: 100% vs its opposite, 50% neutral, 25% vs Ice",
+   "kind": "proc"
+  },
+  "ProcFire": {
+   "name": "Incinerate",
+   "desc": "Fire damage on critical hit: 100% vs its opposite, 50% neutral, 25% vs Fire",
+   "kind": "proc"
+  },
+  "ProcLife": {
+   "name": "Lifebane",
+   "desc": "Life damage on critical hit: 100% vs its opposite, 50% neutral, 25% vs Life",
+   "kind": "proc"
+  },
+  "ProcDeath": {
+   "name": "Death Dealer",
+   "desc": "Death damage on critical hit: 100% vs its opposite, 50% neutral, 25% vs Death",
+   "kind": "proc"
+  },
+  "ProcHeal": {
+   "name": "Mending Blow",
+   "desc": "Restores health on critical hit (no damage)",
+   "kind": "proc"
+  },
+  "ProcHealTime": {
+   "name": "Renew",
+   "desc": "Heal over time on critical hit (no damage)",
+   "kind": "proc"
+  },
+  "CritChance": {
+   "name": "Critical Chance",
+   "desc": "+10% Critical Chance stat (+1.5% real)",
+   "kind": "stat"
+  },
+  "CritDamage": {
+   "name": "Critical Power",
+   "desc": "+10% Critical Power",
+   "kind": "stat"
+  },
+  "Haste": {
+   "name": "Attack Speed",
+   "desc": "+5% Attack Speed",
+   "kind": "stat"
+  },
+  "HealthPercent": {
+   "name": "Health Bonus",
+   "desc": "+15% max HP",
+   "kind": "stat"
+  },
+  "Resilience": {
+   "name": "Tenacity",
+   "desc": "+15% Tenacity",
+   "kind": "stat"
+  },
+  "RecoveryBoost": {
+   "name": "Recovery Bonus",
+   "desc": "+10% healing received",
+   "kind": "stat"
+  },
+  "EarthSlay": {
+   "name": "Earth Slayer",
+   "desc": "+10% damage to Earth creatures",
+   "kind": "stat"
+  },
+  "ResistEarth": {
+   "name": "Resist Earth",
+   "desc": "+10% resist Earth damage",
+   "kind": "stat"
+  },
+  "AirSlay": {
+   "name": "Air Slayer",
+   "desc": "+10% damage to Air creatures",
+   "kind": "stat"
+  },
+  "ResistAir": {
+   "name": "Resist Air",
+   "desc": "+10% resist Air damage",
+   "kind": "stat"
+  },
+  "IceSlay": {
+   "name": "Ice Slayer",
+   "desc": "+10% damage to Ice creatures",
+   "kind": "stat"
+  },
+  "ResistIce": {
+   "name": "Resist Ice",
+   "desc": "+10% resist Ice damage",
+   "kind": "stat"
+  },
+  "FireSlay": {
+   "name": "Fire Slayer",
+   "desc": "+10% damage to Fire creatures",
+   "kind": "stat"
+  },
+  "ResistFire": {
+   "name": "Resist Fire",
+   "desc": "+10% resist Fire damage",
+   "kind": "stat"
+  },
+  "LifeSlay": {
+   "name": "Life Slayer",
+   "desc": "+10% damage to Life creatures",
+   "kind": "stat"
+  },
+  "ResistLife": {
+   "name": "Resist Life",
+   "desc": "+10% resist Life damage",
+   "kind": "stat"
+  },
+  "DeathSlay": {
+   "name": "Death Slayer",
+   "desc": "+10% damage to Death creatures",
+   "kind": "stat"
+  },
+  "ResistDeath": {
+   "name": "Resist Death",
+   "desc": "+10% resist Death damage",
+   "kind": "stat"
+  }
+ },
+ "skillRunes": {
+  "SwordMelee": {
+   "name": "Basic Attack",
+   "desc": "+2.5% Basic Attack damage"
+  },
+  "Smash": {
+   "name": "Smash",
+   "desc": "+15% Smash damage"
+  },
+  "Skewer": {
+   "name": "Skewer",
+   "desc": "+15% Skewer damage"
+  },
+  "Cleave": {
+   "name": "Cleave",
+   "desc": "+15% Cleave damage"
+  },
+  "Warcry": {
+   "name": "Warcry",
+   "desc": "+10% Warcry effectiveness"
+  },
+  "ShieldStun": {
+   "name": "Shield Stun",
+   "desc": "Shield Stun adds a stack of Ignite"
+  },
+  "ToughShout": {
+   "name": "Guardian Shield",
+   "desc": "+40% Guardian Shield damage"
+  },
+  "JumpSlam": {
+   "name": "Jump Slam",
+   "desc": "+20% Jump Slam damage"
+  },
+  "TouchHeal": {
+   "name": "Healing Touch",
+   "desc": "+15% Healing Touch healing"
+  },
+  "GroupHoT": {
+   "name": "Aura of Blessing",
+   "desc": "+15% Aura of Blessing healing"
+  },
+  "FireBlast": {
+   "name": "Fire Blast",
+   "desc": "Adds 2 Stacks of Burn to Fire Blast"
+  },
+  "VineLance": {
+   "name": "Vine Lance",
+   "desc": "15% Vine Lance damage"
+  },
+  "IceSpike": {
+   "name": "Ice Lance",
+   "desc": "Gain +50% Defense for 1 second during Ice Lance"
+  },
+  "PoisonCloud": {
+   "name": "Poison Cloud",
+   "desc": "+50% Poison Cloud DoT"
+  },
+  "FirePillar": {
+   "name": "Flame Wave",
+   "desc": "+15% Flame Wave damage"
+  },
+  "IceNova": {
+   "name": "Ice Nova",
+   "desc": "Ice Nova Weakens targets"
+  },
+  "Meteor": {
+   "name": "Meteor Channel",
+   "desc": "+1 second Meteor duration"
+  },
+  "IceStorm": {
+   "name": "Hail Storm",
+   "desc": "+15% Hail Storm damage"
+  },
+  "SummonGuard": {
+   "name": "Call Guard",
+   "desc": "+5 second Call Guard duration"
+  },
+  "StunStrike": {
+   "name": "Stun Strike",
+   "desc": "+1 second Stun Strike duration"
+  },
+  "PoisonStrike": {
+   "name": "Poison Strike",
+   "desc": "+25% Poison Strike DoT"
+  },
+  "QuickStrike": {
+   "name": "Quick Strike",
+   "desc": "+15% Triple Strike damage"
+  },
+  "SteelCyclone": {
+   "name": "Steel Whirlwind",
+   "desc": "+10% Steel Whirlwind damage"
+  },
+  "Enfeeble": {
+   "name": "Weaken",
+   "desc": "+15% Attack Speed reduction"
+  },
+  "RootStrike": {
+   "name": "Root Strike",
+   "desc": "+25% Entanglement base damage"
+  },
+  "HawkStrike": {
+   "name": "Hawk Strike",
+   "desc": "+10% Hawk Strike damage"
+  },
+  "ReduceArmor": {
+   "name": "Reduce Armor",
+   "desc": "Armor Breaker reduces speed"
+  },
+  "Decoy": {
+   "name": "Decoy",
+   "desc": "+10% Decoy poison damage"
+  },
+  "PermafrostClone": {
+   "name": "Permafrost Clone",
+   "desc": "Permafrost Clone dash Chills"
+  },
+  "HailstoneEmbrace": {
+   "name": "Hailstone Embrace",
+   "desc": "+5% Hailstone Embrace damage"
+  },
+  "PolarSentry": {
+   "name": "Tundra Wyrm",
+   "desc": "+1 second Tundra Wyrm duration"
+  },
+  "Defiance": {
+   "name": "Defiance",
+   "desc": "+10% Defiance damage"
+  },
+  "Barrier": {
+   "name": "Unstable Barrier",
+   "desc": "+20% Unstable Barrier durability"
+  },
+  "SentinelForm": {
+   "name": "Sentinel Form",
+   "desc": "+5% Sentinel Form melee damage"
+  },
+  "SeekingBlades": {
+   "name": "Charon's Blades",
+   "desc": "+50% Charon's Blade damage"
+  },
+  "ShadowBlade": {
+   "name": "Crimson Butterfly",
+   "desc": "+15% Crimson Butterfly damage"
+  },
+  "MistWalk": {
+   "name": "Mist Walk",
+   "desc": "Mist Walk adds 3 stacks of Bleed"
+  },
+  "Pyromania": {
+   "name": "Pyromania",
+   "desc": "+5%  Pyromania damage"
+  },
+  "SummonDragonSoul": {
+   "name": "Dragon Soul",
+   "desc": "+.7 second Dragon Soul duration"
+  },
+  "LeapStrike": {
+   "name": "Meteor Smash",
+   "desc": "Bonus damage per stack of Ignite"
+  },
+  "Berserker": {
+   "name": "Berserker",
+   "desc": "+15% Berserker health regen"
+  },
+  "LightningBomb": {
+   "name": "Lightning Bomb",
+   "desc": "+25% Lightning Bomb damage"
+  },
+  "ShadowArmor": {
+   "name": "Shadow Armor",
+   "desc": "10% Shadow Armor defense"
+  },
+  "ShadowLegion": {
+   "name": "Shadow Legion",
+   "desc": "+2 second Shadow Legion duration"
+  },
+  "ShadowStep": {
+   "name": "Shadow Step",
+   "desc": "+15% Shadow Step damage"
+  },
+  "SoulReaver": {
+   "name": "Soul Reaver",
+   "desc": "+7% Soul Reaver life siphon"
+  },
+  "GhostBlade": {
+   "name": "Ghost Blade",
+   "desc": "+5% Ghost Blade attack leech"
+  },
+  "SoulShatter": {
+   "name": "Soul Shatter",
+   "desc": "+7% Carnifex damage"
+  },
+  "PlagueBattalion": {
+   "name": "Plague Battalion",
+   "desc": "+6% Plague Battalion damage"
+  },
+  "SummonGhoul": {
+   "name": "Call the Horde",
+   "desc": "+10% Call the Horde ghoul damage"
+  },
+  "SummonRangedGhoul": {
+   "name": "Bolster the Horde",
+   "desc": "Bolster ghoul ranged attacks inflict Poison"
+  },
+  "Sanctum": {
+   "name": "Sanctum",
+   "desc": "+7% Sanctum healing"
+  },
+  "CleansingLight": {
+   "name": "Cleansing Light",
+   "desc": "+10% Sacred Light duration"
+  },
+  "LeoneanAura": {
+   "name": "Empyrean Aura",
+   "desc": "5% Empyrean Aura Defense boost"
+  },
+  "WildFire": {
+   "name": "WildFire",
+   "desc": "+10% Wildfire damage"
+  }
+ },
+ "magic": {
+  "Speed": "Move Speed",
+  "ItemDrop": "Gear Find",
+  "GoldDrop": "Gold Find",
+  "CraftDrop": "Material Find",
+  "Speed+ItemDrop": "Move Speed + Gear Find",
+  "Speed+GoldDrop": "Move Speed + Gold Find",
+  "Speed+CraftDrop": "Move Speed + Material Find",
+  "ItemDrop+GoldDrop": "Gear Find + Gold Find",
+  "ItemDrop+CraftDrop": "Gear Find + Material Find",
+  "GoldDrop+CraftDrop": "Gold Find + Material Find"
+ }
+}

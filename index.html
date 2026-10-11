@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DB Gear Library</title>
+<meta name="description" content="Every gear item in Dungeon Blitz, with what your characters own, filtered any way you like.">
+<link rel="stylesheet" href="app/gearlib.css">
+</head>
+<body>
+<div class="page" id="page">
+  <header class="top">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <h1>Gear Library</h1>
+      <p class="sub" id="summary">Loading the game's gear list…</p>
+    </div>
+    <div class="topactions">
+      <label class="btn primary" for="importFile" title="Add DB Inventory Scanner files (dbb-inventory). You can also drop them anywhere on the page.">Import scans</label>
+      <input type="file" id="importFile" accept=".json,application/json" multiple hidden>
+    </div>
+  </header>
+
+  <section class="panel searchpanel" aria-label="Search">
+    <div class="searchrow">
+      <label class="visually-hidden" for="q">Search gear</label>
+      <input id="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="Search: name, or rune:hemorrhage (slot:hat or slot:boots) -is:owned" aria-describedby="qstatus">
+      <button class="iconbtn helpbtn" id="helpBtn" type="button" aria-expanded="false" aria-controls="help" title="How searching works">?</button>
+    </div>
+    <p class="qstatus" id="qstatus" aria-live="polite"></p>
+    <div class="help" id="help" hidden>
+      <div class="helpcols">
+        <dl class="syntax">
+          <dt><code>skull</code></dt><dd>Words match the item name and its rune names.</dd>
+          <dt><code>slot:hat</code></dt><dd>Field and value. Values match loosely, any case.</dd>
+          <dt><code>slot:hat,boots</code></dt><dd>A comma means any of these.</dd>
+          <dt><code>a b</code> &nbsp;<code>a and b</code></dt><dd>Both. A space between terms means and.</dd>
+          <dt><code>a or b</code> &nbsp;<code>a | b</code></dt><dd>Either one.</dd>
+          <dt><code>-a</code> &nbsp;<code>not a</code></dt><dd>Leave these out.</dd>
+          <dt><code>( … )</code></dt><dd>Group terms. And binds tighter than or.</dd>
+          <dt><code>atk>=800</code> &nbsp;<code>level:10..20</code></dt><dd>Numbers compare or take a range.</dd>
+        </dl>
+        <dl class="syntax fields">
+          <dt>class slot rarity focus</dt><dd><code>class:rogue</code> <code>slot:main</code> <code>rarity:legendary</code> <code>focus:def</code></dd>
+          <dt>rune skill magic</dt><dd><code>rune:"heavy blow"</code> <code>skill:charon</code> <code>skill:none</code> <code>magic:gold</code></dd>
+          <dt>owner is</dt><dd><code>owner:maxmage</code> <code>is:owned</code> <code>is:missing</code> <code>is:equipped</code> <code>is:dupe</code></dd>
+          <dt>numbers</dt><dd><code>atk</code> <code>exp</code> <code>def</code> <code>total</code> <code>level</code> <code>id</code> <code>copies</code> <code>runecount</code></dd>
+        </dl>
+      </div>
+      <p class="examples-label">Examples, click to use:</p>
+      <div class="examples" id="examples">
+        <button type="button" class="ex">rune:hemorrhage rune:"heavy blow"</button>
+        <button type="button" class="ex">class:rogue slot:main (focus:attack or focus:balanced) rarity:L</button>
+        <button type="button" class="ex">(rune:"crit chance" or rune:"crit power") -slot:main</button>
+        <button type="button" class="ex">is:missing rarity:legendary class:paladin</button>
+        <button type="button" class="ex">focus:spread</button>
+        <button type="button" class="ex">atk>=900 or total>=1100</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="panel filters" id="filters" aria-label="Filters">
+      <div class="head">
+        <h2>Filters</h2>
+        <button class="linkbtn" id="clearAll" type="button">Clear all</button>
+        <button class="iconbtn filtertoggle" id="filterToggle" type="button" aria-expanded="true" aria-controls="facets" title="Show or hide the filters">▾</button>
+      </div>
+      <div class="facets" id="facets">
+        <p class="hint">Click a chip to include it, again to leave it out. Chips in a group are or; groups are and.</p>
+        <div id="facetList"></div>
+        <div class="facet">
+          <div class="fhead"><h3>Level</h3></div>
+          <div class="numrow">
+            <label for="lvlMin">from</label><input id="lvlMin" type="number" inputmode="numeric" min="0" max="50" placeholder="0">
+            <label for="lvlMax">to</label><input id="lvlMax" type="number" inputmode="numeric" min="0" max="50" placeholder="30">
+          </div>
+        </div>
+        <div class="facet">
+          <div class="fhead"><h3>At least</h3></div>
+          <div class="numrow three">
+            <label for="atkMin" class="atk-t">Atk</label><input id="atkMin" type="number" inputmode="numeric" min="0" placeholder="0">
+            <label for="expMin" class="exp-t">Exp</label><input id="expMin" type="number" inputmode="numeric" min="0" placeholder="0">
+            <label for="defMin" class="def-t">Def</label><input id="defMin" type="number" inputmode="numeric" min="0" placeholder="0">
+          </div>
+        </div>
+        <div class="facet characters">
+          <div class="fhead"><h3>Scans</h3></div>
+          <ul class="scanlist" id="scanList"></ul>
+          <p class="note" id="statNote"></p>
+        </div>
+      </div>
+    </aside>
+
+    <section class="panel results" aria-label="Gear">
+      <div class="head reshead">
+        <h2>Gear</h2>
+        <span class="sub" id="count"></span>
+        <label class="sortlabel" for="sort">Sort</label>
+        <select id="sort">
+          <option value="default">Class, slot, rarity</option>
+          <option value="name">Name</option>
+          <option value="level">Level</option>
+          <option value="attack">Attack</option>
+          <option value="expertise">Expertise</option>
+          <option value="defense">Defense</option>
+          <option value="total">Total stats</option>
+          <option value="id">Gear ID</option>
+        </select>
+        <button class="iconbtn" id="sortDir" type="button" title="Reverse the order" aria-label="Reverse the order">↓</button>
+      </div>
+      <div class="cols" aria-hidden="true">
+        <span>Item</span><span class="c-stats"><i class="atk-t">Atk</i><i class="exp-t">Exp</i><i class="def-t">Def</i></span><span>Runes</span><span>Owned by</span>
+      </div>
+      <div class="list" id="list" role="list"></div>
+      <button class="btn more" id="more" type="button" hidden>Show more</button>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span id="dataNote"></span>
+    <span>Item list from the game's Login.swz via DB Inventory Scanner. Part of the Dungeon Blitz R tools alongside the <a href="https://killssingkurisu.github.io/db-dps-calculator/">DPS Calculator</a>.</span>
+  </footer>
+</div>
+
+<div class="drop" id="drop" hidden><div><b>Drop scans to import</b><span>DB Inventory Scanner files (dbb-inventory)</span></div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="app/data/gear-data.js"></script>
+<script src="app/data/seed-scans.js"></script>
+<script src="app/query.js"></script>
+<script src="app/model.js"></script>
+<script src="app/gearlib.js"></script>
+</body>
+</html>
