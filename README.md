@@ -1,23 +1,15 @@
 # DB Gear Library
 
-Every gear item in Dungeon Blitz (3,546 of them: 394 per class and rarity), what your scanned characters own, and filters that combine with and, or and not. Dressed like the DB DPS Launcher's Damage Meter.
+Every gear item in Dungeon Blitz (3,546 of them: 394 per class and rarity) in one CSV-style table, with what your scanned characters own and a dropdown per filter. Dressed like the DB DPS Launcher's Damage Meter.
 
-Live page (once GitHub Pages is on): https://killssingkurisu.github.io/db-gearlib/
+Live page: https://killssingkurisu.github.io/db-gearlib/
 
 ## Using it
 
-- **Search box.** Words match item names and rune names. Fields narrow it down:
-  `rune:hemorrhage (slot:main or slot:off) -class:mage`
-  - `field:value`, with a comma for any-of: `slot:hat,boots`
-  - a space or `and` between terms means both; `or` / `|` means either; `-`, `!` or `not` leaves out; parentheses group (and binds tighter than or)
-  - numbers compare or take a range: `atk>=800`, `level:10..20`, `total>1000`
-  - fields: `name class slot rarity focus rune skill magic owner is level id atk exp def total copies runecount`
-  - `is:owned`, `is:missing`, `is:equipped`, `is:dupe`, `skill:none`
-  - the line under the box shows how the search reads, with the grouping spelled out
-- **Chips.** One click includes a value, a second click leaves it out, a third clears it. Chips in a group are or; groups are and with each other and with the search. Runes and Magic have an Any / All switch. The number on a chip is how many items it would match with everything else as it is.
-- **Scans.** The three bundled scans (MaxMage, MaxRogue, Search Your Gear For) are on by default. Import more with *Import scans* or drop `DB inventory … .json` files on the page; an imported scan replaces the one of the same character. Imports stay in this browser. Turn any scan off with its dot.
-- **Table.** One line per item, a column per field (Name, Class, Slot, Rarity, Focus, Lv, Atk, Exp, Def, Total, Rune 1, Rune 2, Skill rune, Magic, Owned by, ID). Click a header to sort by it, again to reverse; stat columns start highest first and unknown stats always sort last. The name column stays put when the table scrolls sideways. Click a name for gear ID, rune and skill rune text, and who owns how many.
+- **Table.** One line per item, a column per field: Name, Class, Type, Rarity, Focus, Lv, Atk, Exp, Def, Total, Rune 1, Rune 2, Skill rune, Magic, Owned by, ID. Click a header to sort by it, again to reverse; stat columns start highest first and unknown stats always sort last. Click a name for rune and skill rune text and who owns how many.
+- **Filters.** Separate dropdowns: Class, Gear type, Rarity, Stat focus, Rune (either rune slot), Skill rune (only the picked class's), Owned by. They all apply together. Each option shows how many items it would give with the other dropdowns as they are.
 - **CSV.** *Copy CSV* copies every matching row (not only the ones shown) with the same columns, ready to paste into a spreadsheet. *Download CSV* saves the same as a file; it shows only when the page is opened on its own, since framed previews can't save files.
+- **Scans.** The three bundled scans (MaxMage, MaxRogue, Search Your Gear For) fill *Owned by*. Import more with *Import scans* or drop `DB inventory … .json` files on the page; an imported scan replaces the one of the same character and stays in this browser.
 
 ## Stats
 
@@ -28,7 +20,7 @@ The game's stat tables don't match what the rebuilt game shows (see the scanner 
 | Path | What |
 |---|---|
 | `index.html`, `app/gearlib.css`, `app/gearlib.js` | the page |
-| `app/query.js` | the search language: `parse`, `compile`, `describe` (also runs in Node) |
+| `app/filters.js` | the dropdowns and the option counts (also runs in Node) |
 | `app/model.js` | builds the item rows from the gear list and the scans; checks imported files |
 | `app/data/gear-data.js` | generated: every item plus rune, skill rune and magic names |
 | `app/data/seed-scans.js` | generated: the bundled scans, trimmed |
@@ -41,7 +33,7 @@ The game's stat tables don't match what the rebuilt game shows (see the scanner 
 
 ```
 node tools/build-data.js     # after changing data/: regenerates app/data
-node test/run.js             # search language and scan matching against the real data
+node test/run.js             # scan matching and the dropdown filters against the real data
 node tools/build-single.js   # optional: dist/gear-library.html, one self-contained file
 ```
 
