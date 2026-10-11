@@ -56,3 +56,23 @@ fs.writeFileSync(path.join(root, 'app/data/gear-data.js'), banner + 'window.DBB_
 fs.writeFileSync(path.join(root, 'app/data/seed-scans.js'), banner + 'window.DBB_SEED_SCANS = ' + JSON.stringify(scans) + ';\n');
 console.log('gear-data.js: %d items; seed-scans.js: %d scans (%s)', gear.length, scans.length,
     scans.map((s) => s.character.name + ' ' + s.gear.length).join(', '));
+
+// gear.csv: every item with the page's columns, so the whole library is one file at /gear.csv.
+const M = require('../app/model.js');
+const { items } = M.buildItems(gearData, scans);
+const cell = (v) => {
+    const t = v === null || v === undefined ? '' : String(v);
+    return /[",\n\r]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t;
+};
+const order = (it) => [M.CLASSES.indexOf(it.cls), M.SLOTS.indexOf(it.slot), -it.tier, it.level];
+items.sort((a, b) => {
+    const x = order(a), y = order(b);
+    for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return x[i] - y[i];
+    return a.name.localeCompare(b.name);
+});
+const st = (it, f) => (it.stats ? (f === 'total' ? it.total : it.stats[f]) : '');
+const header = ['Name', 'Class', 'Type', 'Rarity', 'Focus', 'Level', 'Attack', 'Expertise', 'Defense', 'Total', 'Rune 1', 'Rune 2', 'Skill rune', 'Magic', 'Gear ID'];
+const rows = items.map((it) => [it.name, it.cls, M.SLOT_NAME[it.slot], M.RARITY_NAME[it.rarity], M.FOCUS_NAME[it.focus], it.level,
+    st(it, 'attack'), st(it, 'expertise'), st(it, 'defense'), st(it, 'total'), it.runeNames[0] || '', it.runeNames[1] || '', it.skillName, it.magicName, it.id]);
+fs.writeFileSync(path.join(root, 'gear.csv'), [header].concat(rows).map((r) => r.map(cell).join(',')).join('\r\n') + '\r\n');
+console.log('gear.csv: %d rows', rows.length);

@@ -23,6 +23,7 @@ The game's stat tables don't match what the rebuilt game shows (see the scanner 
 | `app/model.js` | builds the item rows from the gear list and takes stats from the scans |
 | `app/data/gear-data.js` | generated: every item plus rune, skill rune and magic names |
 | `app/data/seed-scans.js` | generated: the scans, trimmed |
+| `gear.csv` | generated: every item with the table's columns (also at /gear.csv on the site) |
 | `data/catalog.json` | the item list from DB Inventory Scanner (read from the game's Login.swz) |
 | `data/names.json` | rune, skill rune and magic names from the DPS Calculator's game data |
 | `data/scans/` | the `dbb-inventory` scans the stats come from |

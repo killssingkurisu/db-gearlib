@@ -25,7 +25,7 @@ jobs:
       - name: Data is up to date
         run: |
           node tools/build-data.js
-          git diff --exit-code -- app/data || (echo "Run node tools/build-data.js and commit app/data" && exit 1)
+          git diff --exit-code -- app/data gear.csv || (echo "Run node tools/build-data.js and commit app/data and gear.csv" && exit 1)
       - run: node test/run.js
 
   deploy:
