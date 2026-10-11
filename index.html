@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>DB Gear Library</title>
-<meta name="description" content="Every gear item in Dungeon Blitz in one table, with what your characters own.">
+<meta name="description" content="Every gear item in Dungeon Blitz in one table: class, type, rarity, focus, stats, runes, skill rune and magic.">
 <link rel="stylesheet" href="app/gearlib.css">
 </head>
 <body>
@@ -14,10 +14,6 @@
       <span class="dot" aria-hidden="true"></span>
       <h1>Gear Library</h1>
       <p class="sub" id="summary">Loading the game's gear list…</p>
-    </div>
-    <div class="topactions">
-      <label class="btn" for="importFile" title="Add DB Inventory Scanner files (dbb-inventory). You can also drop them on the page.">Import scans</label>
-      <input type="file" id="importFile" accept=".json,application/json" multiple hidden>
     </div>
   </header>
 
@@ -42,11 +38,10 @@
 
   <footer class="foot">
     <span id="dataNote"></span>
-    <span>Item list from the game's Login.swz via DB Inventory Scanner. Stats come from scans. Part of the Dungeon Blitz R tools alongside the <a href="https://killssingkurisu.github.io/db-dps-calculator/">DPS Calculator</a>.</span>
+    <span>Item list from the game's Login.swz via DB Inventory Scanner. Stats as the game shows them, read from inventory scans. Part of the Dungeon Blitz R tools alongside the <a href="https://killssingkurisu.github.io/db-dps-calculator/">DPS Calculator</a>.</span>
   </footer>
 </div>
 
-<div class="drop" id="drop" hidden><div><b>Drop scans to import</b><span>DB Inventory Scanner files (dbb-inventory)</span></div></div>
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script src="app/data/gear-data.js"></script>

@@ -22,7 +22,7 @@ let passed = 0;
 function check(name, fn) {
     try { fn(); passed++; } catch (e) { console.error('FAIL ' + name + '\n  ' + e.message); process.exitCode = 1; }
 }
-const run = (picked) => F.apply(items, F.defs(data, characters, picked), picked);
+const run = (picked) => F.apply(items, F.defs(data, picked), picked);
 
 check('catalog size', () => assert.strictEqual(items.length, 3546));
 check('every scanned item matched', () => characters.forEach((c) => assert.deepStrictEqual(c.unmatched, [], c.name)));
@@ -44,14 +44,11 @@ check('rune matches either rune', () => {
     assert.ok(!r.some((i) => i.runes.includes('ProcMassive') && !i.runes.includes('ProcMassiveTime')));
 });
 check('focus', () => assert.ok(run({ focus: 'Armor' }).results.every((i) => i.focus === 'Armor')));
-check('owned by', () => {
-    assert.strictEqual(run({ owner: '*' }).results.length, 394 * 3);
-    assert.strictEqual(run({ owner: '!' }).results.length, 3546 - 394 * 3);
-    assert.ok(run({ owner: '@MaxRogue' }).results.every((i) => i.cls === 'Rogue'));
-});
+check('every Legendary has stats from the scans', () => assert.ok(items.filter((i) => i.rarity === 'L').every((i) => i.stats)));
+check('no owner filter', () => assert.ok(!F.defs(data, {}).some((d) => d.key === 'owner')));
 check('no skill rune', () => assert.ok(run({ skill: '-' }).results.every((i) => !i.skill)));
 check('skill runes follow the class', () => {
-    const defs = F.defs(data, characters, { class: 'Mage' });
+    const defs = F.defs(data, { class: 'Mage' });
     const opts = F.optionsOf(defs.find((d) => d.key === 'skill')).map((o) => o.v);
     assert.ok(opts.includes('Meteor') && !opts.includes('SeekingBlades'));
 });

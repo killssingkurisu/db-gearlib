@@ -1,7 +1,7 @@
 /**
  * The dropdown filters. Each is one <select>; an empty value means "any". All filters are and.
  *
- *   defs(data, characters, picked)  the dropdowns, their options (with optgroups) and tests
+ *   defs(data, picked)              the dropdowns, their options (with optgroups) and tests
  *   apply(items, defs, picked)      { results, counts } — counts[key][value] is how many items an
  *                                   option would show with the other filters as they are
  *
@@ -19,7 +19,7 @@
     const RARITIES = [['L', 'Legendary'], ['R', 'Rare'], ['M', 'Magic']];
     const FOCUSES = [['Attack', 'Attack'], ['Expertise', 'Expertise'], ['Armor', 'Defense'], ['Balanced', 'Balanced'], ['Spread', 'Spread']];
 
-    function defs(data, characters, picked) {
+    function defs(data, picked) {
         const runes = data.runes || {};
         const opt = (v, label) => ({ v, label });
         const procs = Object.keys(runes).filter((k) => runes[k].kind === 'proc').map((k) => opt(k, runes[k].name));
@@ -49,11 +49,6 @@
                 test: (it, v) => it.runes.includes(v),
             },
             { key: 'skill', label: 'Skill rune', any: 'Any skill rune', groups: skillGroups, test: (it, v) => (v === '-' ? !it.skill : it.skill === v) },
-            {
-                key: 'owner', label: 'Owned by', any: 'Anyone or no one',
-                options: [opt('*', 'Any scanned character'), opt('!', 'Not owned')].concat(characters.map((c) => opt('@' + c.name, c.name))),
-                test: (it, v) => (v === '*' ? it.owners.length > 0 : v === '!' ? it.owners.length === 0 : it.owners.some((o) => '@' + o.name === v)),
-            },
         ];
     }
 
