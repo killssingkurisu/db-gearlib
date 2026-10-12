@@ -18,14 +18,20 @@ const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 
 const catalog = read('data/catalog.json');
 const names = read('data/names.json');
+const drops = read('data/drops.json');
 
-// One row per item: [name, class, slot, gearId, tier, focus, procRunes, skillRune, magic, level]
-const gear = catalog.gear.map((g) => [g.n, g.c, g.s, g.id, g.t, g.f, g.p, g.k || '', g.m || '', g.l || 0]);
+// Where each gear id comes from (data/drops.json, made by tools/extract_drops.py):
+// [dungeonLevel, 'boss' | 'realm', boss or realm] per dungeon, or a single string for a special item.
+const sourceOf = (id) => (drops.gear[String(id)] || []).map((s) => (s.special ? s.special : [s.dungeon, s.kind, s.by]));
+
+// One row per item: [name, class, slot, gearId, tier, focus, procRunes, skillRune, magic, level, sources]
+const gear = catalog.gear.map((g) => [g.n, g.c, g.s, g.id, g.t, g.f, g.p, g.k || '', g.m || '', g.l || 0, sourceOf(g.id)]);
 
 const gearData = {
     version: 1,
-    fields: ['name', 'class', 'slot', 'gearId', 'tier', 'focus', 'runes', 'skillRune', 'magic', 'level'],
+    fields: ['name', 'class', 'slot', 'gearId', 'tier', 'focus', 'runes', 'skillRune', 'magic', 'level', 'sources'],
     gear,
+    dungeons: drops.dungeons,
     runes: names.runes,
     skillRunes: names.skillRunes,
     magic: names.magic,
@@ -71,8 +77,10 @@ items.sort((a, b) => {
     return a.name.localeCompare(b.name);
 });
 const st = (it, f) => (it.stats ? (f === 'total' ? it.total : it.stats[f]) : '');
-const header = ['Name', 'Class', 'Type', 'Rarity', 'Focus', 'Level', 'Attack', 'Expertise', 'Defense', 'Total', 'Rune 1', 'Rune 2', 'Skill rune', 'Magic', 'Gear ID'];
+const header = ['Name', 'Class', 'Type', 'Rarity', 'Focus', 'Level', 'Attack', 'Expertise', 'Defense', 'Total', 'Rune 1', 'Rune 2', 'Skill rune', 'Magic',
+    'Zone', 'Obtained in', 'Dropped by', 'Gear ID'];
 const rows = items.map((it) => [it.name, it.cls, M.SLOT_NAME[it.slot], M.RARITY_NAME[it.rarity], M.FOCUS_NAME[it.focus], it.level,
-    st(it, 'attack'), st(it, 'expertise'), st(it, 'defense'), st(it, 'total'), it.runeNames[0] || '', it.runeNames[1] || '', it.skillName, it.magicName, it.id]);
+    st(it, 'attack'), st(it, 'expertise'), st(it, 'defense'), st(it, 'total'), it.runeNames[0] || '', it.runeNames[1] || '', it.skillName, it.magicName,
+    M.sourceZone(it), M.sourceText(it), M.droppedBy(it), it.id]);
 fs.writeFileSync(path.join(root, 'gear.csv'), [header].concat(rows).map((r) => r.map(cell).join(',')).join('\r\n') + '\r\n');
 console.log('gear.csv: %d rows', rows.length);

@@ -55,6 +55,7 @@
 
     /* ---------- columns (table and CSV) ---------- */
 
+    const DUNGEON_ORDER = Object.fromEntries(Object.keys(DATA.dungeons || {}).map((k, i) => [k, i]));
     const stat = (it, f) => (it.stats ? (f === 'total' ? it.total : it.stats[f]) : null);
     const COLS = [
         { key: 'name', label: 'Name', text: (it) => it.name },
@@ -71,9 +72,14 @@
         { key: 'rune2', label: 'Rune 2', text: (it) => it.runeNames[1] || '' },
         { key: 'skill', label: 'Skill rune', text: (it) => it.skillName },
         { key: 'magic', label: 'Magic', text: (it) => it.magicName },
+        { key: 'where', label: 'Obtained in', text: (it) => M.sourceText(it), order: (it) => (it.sources.length ? DUNGEON_ORDER[it.sources[0].dungeon] : 1000) },
         { key: 'id', label: 'ID', csv: 'Gear ID', num: true, plain: true, value: (it) => it.id },
     ];
     const COL = Object.fromEntries(COLS.map((c) => [c.key, c]));
+    const CSV_EXTRA = [ // after Magic in the CSV only
+        { csv: 'Zone', text: (it) => M.sourceZone(it) },
+        { csv: 'Dropped by', text: (it) => M.droppedBy(it) },
+    ];
 
     function sortItems(list) {
         const cmpDefault = (a, b) => M.CLASSES.indexOf(a.cls) - M.CLASSES.indexOf(b.cls) || M.SLOTS.indexOf(a.slot) - M.SLOTS.indexOf(b.slot)
@@ -108,8 +114,14 @@
         return /[",\n\r]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t;
     }
     function toCsv(list) {
-        const lines = [COLS.map((c) => csvCell(c.csv || c.label)).join(',')];
-        for (const it of list) lines.push(COLS.map((c) => csvCell(c.num ? c.value(it) : c.text(it))).join(','));
+        // Same columns as the table, with Zone before and Dropped by after Obtained in.
+        const cols = [];
+        for (const c of COLS) {
+            if (c.key === 'where') cols.push(CSV_EXTRA[0], c, CSV_EXTRA[1]);
+            else cols.push(c);
+        }
+        const lines = [cols.map((c) => csvCell(c.csv || c.label)).join(',')];
+        for (const it of list) lines.push(cols.map((c) => csvCell(c.num ? c.value(it) : c.text(it))).join(','));
         return lines.join('\r\n') + '\r\n';
     }
 
@@ -179,7 +191,14 @@
         const src = !it.stats ? 'Stats for a ' + kind + ' of this class are not known yet.'
             : it.statSource === 'scan' ? 'Stats as the game shows them.'
                 : 'Stats as the game shows them for a ' + kind + ' of this class; items of the same kind share them.';
+        const tierNote = it.rarity === 'L' ? 'Legendary drops only on Hard.' : it.rarity === 'R' ? 'Rare drops on Normal and Hard.' : 'Magic drops on Normal and Hard.';
+        const where = it.sources.length
+            ? it.sources.map((so) => '<p><b>' + esc(so.name) + '</b> <span class="desc">' + esc(so.zone) + '</span></p>'
+                + '<p class="desc">' + esc(so.kind === 'boss' ? 'Dropped by the boss, ' + so.by + '.' : 'Dropped by ' + so.by + ' lieutenants and mini-bosses.') + '</p>').join('')
+                + '<p class="src">' + tierNote + '</p>'
+            : it.special ? '<p><b>' + esc(it.special) + '</b></p><p class="desc">Not a dungeon drop.</p>' : '<p class="desc">Not known.</p>';
         return '<div class="detail">'
+            + '<div><h4>Obtained in</h4>' + where + '</div>'
             + '<div><h4>Item</h4><p class="src">Gear ID ' + it.id + ' · ' + esc(it.cls) + ' · level ' + it.level + '</p><p class="src">' + esc(src) + '</p></div>'
             + '<div><h4>Runes</h4>' + (runeLines || '<p class="desc">None.</p>') + '</div>'
             + '<div><h4>Skill rune</h4>' + skill + '<h4>Magic</h4>' + magic + '</div>'
@@ -190,7 +209,7 @@
     function render() {
         const defs = F.defs(DATA, state.picked);
         // A skill rune of a class no longer picked would hide everything; drop it.
-        if (state.picked.skill && !F.optionsOf(defs[5]).some((o) => o.v === state.picked.skill)) delete state.picked.skill;
+        if (state.picked.skill && !F.optionsOf(defs.find((d) => d.key === 'skill')).some((o) => o.v === state.picked.skill)) delete state.picked.skill;
         const { results, counts } = F.apply(model.items, defs, state.picked);
         renderFilters(defs, counts);
         lastResults = sortItems(results);

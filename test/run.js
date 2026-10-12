@@ -59,6 +59,28 @@ check('counts match results', () => {
     assert.strictEqual(counts.slot.offhand, run(Object.assign({ slot: 'offhand' }, picked)).results.length);
     assert.strictEqual(counts.class.Rogue, run({ class: 'Rogue', rarity: 'L' }).results.length);
 });
+// Drop sources: the same cases as the server's gear_drop_source_regression.ts.
+const srcOf = (cls, id) => items.find((i) => i.cls === cls && i.id === id).sources.map((x) => x.dungeon + ':' + x.kind);
+check('realm gear drops only in its dungeon', () => {
+    assert.deepStrictEqual(srcOf('Mage', 522), ['BT_Mission1:realm']);   // Bandit Camp, not BT_Mission4
+    assert.deepStrictEqual(srcOf('Mage', 512), ['BT_Mission4:realm']);   // Dereliction of Duty
+    assert.deepStrictEqual(srcOf('Mage', 426), ['CH_Mission6:realm']);   // Mausoleum of the Wise
+    assert.deepStrictEqual(srcOf('Mage', 1048), ['JC_Mission11:realm']); // not Hiding Out, not JC_Mission2
+    assert.deepStrictEqual(srcOf('Mage', 1140), ['JC_Mini1:realm']);     // The West Wing only
+    assert.deepStrictEqual(srcOf('Mage', 1047), ['JC_Mission5:realm']);  // Fable of the Lost Temple
+});
+check('boss gear drops from its boss in its dungeon', () => {
+    assert.deepStrictEqual(srcOf('Mage', 515), ['BT_Mission1:boss']);
+    assert.deepStrictEqual(srcOf('Mage', 422), ['CH_Mission6:boss']);
+    assert.deepStrictEqual(srcOf('Mage', 525), ['SwampRoadConnectionMission:boss']);
+});
+check('every item has a source', () => assert.ok(items.every((i) => i.sources.length || i.special)));
+check('obtained-in dropdown', () => {
+    const r = run({ where: 'BT_Mission1' }).results;
+    assert.ok(r.length > 0 && r.every((i) => i.sources.some((x) => x.dungeon === 'BT_Mission1')));
+    assert.strictEqual(run({ where: '~Treasure Trove (lockbox)' }).results.length, 18 * 3);
+    assert.strictEqual(run({ where: '~Halloween event' }).results.length, 3 * 3);
+});
 check('parseScan rejects meter exports', () => assert.throws(() => M.parseScan({ format: 'dbb-dps' }), /DPS meter/));
 
 console.log(passed + ' checks passed' + (process.exitCode ? ', some failed' : ''));

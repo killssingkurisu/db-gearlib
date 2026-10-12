@@ -80,8 +80,14 @@
         const skillInfo = data.skillRunes || {};
         const magicInfo = data.magic || {};
 
+        const dungeons = data.dungeons || {};
         const items = data.gear.map((row, index) => {
-            const [name, cls, slot, id, tier, focus, runes, skill, magic, level] = row;
+            const [name, cls, slot, id, tier, focus, runes, skill, magic, level, srcs] = row;
+            // Where it comes from: dungeon drops ({ dungeon, name, zone, kind, by }) or one special source.
+            const sources = (srcs || []).filter((s) => Array.isArray(s)).map(([dungeon, kind, by]) => ({
+                dungeon, kind, by, name: dungeons[dungeon] ? dungeons[dungeon].name : dungeon, zone: dungeons[dungeon] ? dungeons[dungeon].zone : '',
+            }));
+            const special = (srcs || []).find((s) => typeof s === 'string') || '';
             const rarity = RARITY[tier] || 'M';
             const magicParts = magic ? magic.split('+') : [];
             return {
@@ -90,6 +96,7 @@
                 runeNames: runes.map((r) => (runeInfo[r] ? runeInfo[r].name : r)),
                 skill, skillName: skill ? (skillInfo[skill] ? skillInfo[skill].name : skill) : '',
                 magic, magicParts, magicName: magic ? (magicInfo[magic] || magicParts.map((m) => MAGIC_PART[m] || m).join(' + ')) : '',
+                sources, special,
                 owners: [], copies: 0, scanned: [], stats: null, statSource: null,
             };
         });
@@ -156,7 +163,19 @@
         return { items, characters };
     }
 
+    /** "Bandit Camp", "Treasure Trove (lockbox)" or "" — for the table and the CSV. */
+    function sourceText(it) {
+        return it.sources.length ? it.sources.map((s) => s.name).join(' / ') : it.special;
+    }
+    function sourceZone(it) {
+        return Array.from(new Set(it.sources.map((s) => s.zone))).join(' / ');
+    }
+    /** "Bandit Twin (boss)" or "Human lieutenants and mini-bosses". */
+    function droppedBy(it) {
+        return it.sources.map((s) => (s.kind === 'boss' ? s.by + ' (boss)' : s.by + ' lieutenants and mini-bosses')).join(' / ');
+    }
+
     return {
-        buildItems, parseScan, RARITY, RARITY_NAME, SLOTS, SLOT_NAME, FOCUS_NAME, CLASSES, MAGIC_PART,
+        buildItems, parseScan, sourceText, sourceZone, droppedBy, RARITY, RARITY_NAME, SLOTS, SLOT_NAME, FOCUS_NAME, CLASSES, MAGIC_PART,
     };
 });

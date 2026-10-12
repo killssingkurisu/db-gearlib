@@ -38,6 +38,17 @@
         const shared = Object.keys(skillCls).filter((k) => skillCls[k].size > 1);
         skillGroups.push({ label: 'Every class', options: shared.map((k) => opt(k, skillName(k))).concat([opt('-', 'No skill rune')]) });
 
+        // Where to get it: one optgroup per zone (in game order), then the items that are not dungeon drops.
+        const dungeons = data.dungeons || {};
+        const zones = [];
+        for (const [level, d] of Object.entries(dungeons)) {
+            let z = zones.find((g) => g.label === d.zone);
+            if (!z) zones.push(z = { label: d.zone, options: [] });
+            z.options.push(opt(level, d.name));
+        }
+        const specials = Array.from(new Set(data.gear.map((row) => (row[10] || []).find((s) => typeof s === 'string')).filter(Boolean)));
+        if (specials.length) zones.push({ label: 'Not a dungeon drop', options: specials.sort().map((s) => opt('~' + s, s)) });
+
         return [
             { key: 'class', label: 'Class', any: 'Any class', options: CLASSES.map((c) => opt(c, c)), test: (it, v) => it.cls === v },
             { key: 'slot', label: 'Gear type', any: 'Any gear type', options: SLOTS.map(([v, l]) => opt(v, l)), test: (it, v) => it.slot === v },
@@ -49,6 +60,10 @@
                 test: (it, v) => it.runes.includes(v),
             },
             { key: 'skill', label: 'Skill rune', any: 'Any skill rune', groups: skillGroups, test: (it, v) => (v === '-' ? !it.skill : it.skill === v) },
+            {
+                key: 'where', label: 'Obtained in', any: 'Anywhere', groups: zones,
+                test: (it, v) => (v[0] === '~' ? it.special === v.slice(1) : it.sources.some((s) => s.dungeon === v)),
+            },
         ];
     }
 

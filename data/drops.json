@@ -1,0 +1,8493 @@
+{
+ "source": "dungeon-blitz-r server drop rules (GameData.getGearIdForEntity) with the client's drop-location tables",
+ "dungeons": {
+  "TutorialDungeon": {
+   "name": "Goblin Kidnappers",
+   "zone": "Wolf's End"
+  },
+  "GoblinRiverDungeon": {
+   "name": "Goblin Camp",
+   "zone": "Wolf's End"
+  },
+  "GhostBossDungeon": {
+   "name": "Nephit's Quest",
+   "zone": "Wolf's End"
+  },
+  "DreamDragonDungeon": {
+   "name": "The Dragon's Dream",
+   "zone": "Wolf's End"
+  },
+  "SRN_Mission1": {
+   "name": "Tower of the Tuatara",
+   "zone": "Blackrose Mire"
+  },
+  "SRN_Mission2": {
+   "name": "Mystery of the Yornak",
+   "zone": "Blackrose Mire"
+  },
+  "SRN_Mission3": {
+   "name": "Svar's Spite",
+   "zone": "Blackrose Mire"
+  },
+  "SRN_Mission4": {
+   "name": "Lair of the Ooyak",
+   "zone": "Blackrose Mire"
+  },
+  "SRN_Mission5": {
+   "name": "Citadel of the Vizier",
+   "zone": "Blackrose Mire"
+  },
+  "SRN_Mission6": {
+   "name": "Mindless Queen's Glade",
+   "zone": "Blackrose Mire"
+  },
+  "SRN_Mission7": {
+   "name": "The Great Green Svath",
+   "zone": "Blackrose Mire"
+  },
+  "SwampRoadConnectionMission": {
+   "name": "Arachnae's Swamp",
+   "zone": "Blackrose Mire"
+  },
+  "BT_Mission1": {
+   "name": "Bandit Camp",
+   "zone": "Felbridge"
+  },
+  "BT_Mission2": {
+   "name": "Svagg's Last Stand",
+   "zone": "Felbridge"
+  },
+  "BT_Mission3": {
+   "name": "The Mouth of Meylour",
+   "zone": "Felbridge"
+  },
+  "BT_Mission4": {
+   "name": "Dereliction of Duty",
+   "zone": "Felbridge"
+  },
+  "CH_Mission1": {
+   "name": "Wither the Witch?",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission2": {
+   "name": "Gnole's Storehouse",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission3": {
+   "name": "Undying Vendetta",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission4": {
+   "name": "Lord Tilly's Rest",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission5": {
+   "name": "Embodiment of Evil",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission6": {
+   "name": "Mausoleum of the Wise",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission7": {
+   "name": "Rising Damned",
+   "zone": "Cemetery Hill"
+  },
+  "CH_Mission8": {
+   "name": "Gnole's Last Stand",
+   "zone": "Cemetery Hill"
+  },
+  "OMM_Mission1": {
+   "name": "Give Voice to Stone",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission2": {
+   "name": "Rock Hulk Garden",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission3": {
+   "name": "Eye of the Tyrant",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission4": {
+   "name": "Abandoned Armory",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission5": {
+   "name": "Hunted to the Edge",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission6": {
+   "name": "Forgotten Forge",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission7": {
+   "name": "Gnole's Roost",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission8": {
+   "name": "Veins of Meylour",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission9": {
+   "name": "The Growing Flame",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission10": {
+   "name": "All Shall be Ashes",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission11": {
+   "name": "Meylour's Embers",
+   "zone": "Stormshard"
+  },
+  "OMM_Mission12": {
+   "name": "Death to Meylour",
+   "zone": "Stormshard"
+  },
+  "EG_Mission1": {
+   "name": "The Ashen Dryad",
+   "zone": "Emerald Glades"
+  },
+  "EG_Mission2": {
+   "name": "Out on a Limb",
+   "zone": "Emerald Glades"
+  },
+  "EG_Mission3": {
+   "name": "Rotten to the Roots",
+   "zone": "Emerald Glades"
+  },
+  "EG_Mission4": {
+   "name": "Hope Springs Eternal",
+   "zone": "Emerald Glades"
+  },
+  "EG_Mission5": {
+   "name": "Refuge of the Damned",
+   "zone": "Emerald Glades"
+  },
+  "AC_Mission1": {
+   "name": "Castle Hocke",
+   "zone": "Deepgard Castle"
+  },
+  "AC_Mission2": {
+   "name": "The Emerald Throne",
+   "zone": "Deepgard Castle"
+  },
+  "AC_Mission3": {
+   "name": "Battles Lost and Won",
+   "zone": "Deepgard Castle"
+  },
+  "AC_Mission4": {
+   "name": "Aetheric Observatory",
+   "zone": "Deepgard Castle"
+  },
+  "AC_Mission5": {
+   "name": "Last Stand",
+   "zone": "Deepgard Castle"
+  },
+  "AC_Mission6": {
+   "name": "The Capstone",
+   "zone": "Deepgard Castle"
+  },
+  "SD_Mission1": {
+   "name": "Unearthing the Past",
+   "zone": "Shazari Desert"
+  },
+  "SD_Mission2": {
+   "name": "Scarab Invasion",
+   "zone": "Shazari Desert"
+  },
+  "SD_Mission3": {
+   "name": "Blood and Sand",
+   "zone": "Shazari Desert"
+  },
+  "SD_Mission4": {
+   "name": "Goblin Diplomacy",
+   "zone": "Shazari Desert"
+  },
+  "SD_Mission5": {
+   "name": "Ancient Unrest",
+   "zone": "Shazari Desert"
+  },
+  "SD_Mission6": {
+   "name": "Legacy of the Magi",
+   "zone": "Shazari Desert"
+  },
+  "JC_Mission1": {
+   "name": "The Welcome Party",
+   "zone": "Valhaven"
+  },
+  "JC_Mission2": {
+   "name": "Back Alley Deals",
+   "zone": "Valhaven"
+  },
+  "JC_Mission3": {
+   "name": "The Prodigal Son",
+   "zone": "Valhaven"
+  },
+  "JC_Mission4": {
+   "name": "Sewer Suffering",
+   "zone": "Valhaven"
+  },
+  "JC_Mission5": {
+   "name": "Fable of the Lost Temple",
+   "zone": "Valhaven"
+  },
+  "JC_Mission6": {
+   "name": "Dream Within a Dream",
+   "zone": "Valhaven"
+  },
+  "JC_Mission7": {
+   "name": "Royal Intervention",
+   "zone": "Valhaven"
+  },
+  "JC_Mission8": {
+   "name": "Attack of Opportunity",
+   "zone": "Valhaven"
+  },
+  "JC_Mission9": {
+   "name": "Hiding Out",
+   "zone": "Valhaven"
+  },
+  "JC_Mission10": {
+   "name": "Ancient Vault",
+   "zone": "Valhaven"
+  },
+  "JC_Mission11": {
+   "name": "Ring of Fire",
+   "zone": "Valhaven"
+  },
+  "JC_Mini1": {
+   "name": "The West Wing",
+   "zone": "Valhaven"
+  }
+ },
+ "gear": {
+  "1": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "2": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "3": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "4": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "5": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "6": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "7": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "8": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "9": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "10": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "11": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "12": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "13": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "14": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "15": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "16": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "17": [
+   {
+    "dungeon": "TutorialDungeon",
+    "kind": "boss",
+    "by": "Tak-Ugo"
+   }
+  ],
+  "18": [
+   {
+    "dungeon": "TutorialDungeon",
+    "kind": "boss",
+    "by": "Tak-Ugo"
+   }
+  ],
+  "19": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "20": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "21": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "22": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "23": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "24": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "25": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "26": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "27": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "28": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "29": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "30": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "31": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "32": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "33": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "34": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "35": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "36": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "37": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "38": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "39": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "40": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "41": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "42": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "43": [
+   {
+    "dungeon": "TutorialDungeon",
+    "kind": "boss",
+    "by": "Tak-Ugo"
+   }
+  ],
+  "44": [
+   {
+    "dungeon": "TutorialDungeon",
+    "kind": "boss",
+    "by": "Tak-Ugo"
+   }
+  ],
+  "45": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "46": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "47": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "48": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "49": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "50": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "51": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "52": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "53": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "54": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "55": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "56": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "57": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "58": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "59": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "60": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "61": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "62": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "63": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "64": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "65": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "66": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "boss",
+    "by": "Tak-Ogg"
+   }
+  ],
+  "67": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "68": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "69": [
+   {
+    "dungeon": "TutorialDungeon",
+    "kind": "boss",
+    "by": "Tak-Ugo"
+   }
+  ],
+  "70": [
+   {
+    "dungeon": "TutorialDungeon",
+    "kind": "boss",
+    "by": "Tak-Ugo"
+   }
+  ],
+  "71": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "72": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "73": [
+   {
+    "dungeon": "GhostBossDungeon",
+    "kind": "boss",
+    "by": "Gray Ghost Lord"
+   }
+  ],
+  "74": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "75": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "boss",
+    "by": "Young Dream Dragon"
+   }
+  ],
+  "76": [
+   {
+    "dungeon": "GoblinRiverDungeon",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "77": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "78": [
+   {
+    "dungeon": "DreamDragonDungeon",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "79": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "80": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "81": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "82": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "83": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "84": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "85": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "86": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "87": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "88": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "89": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "90": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "91": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "92": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "93": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "94": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "95": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "96": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "97": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "98": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "99": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "100": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "101": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "102": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "103": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "104": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "105": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "106": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "107": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "108": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "109": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "110": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "111": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "112": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "113": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "114": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "115": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "116": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "117": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "118": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "119": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "120": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "121": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "122": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "123": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "124": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "125": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "126": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "127": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "128": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "129": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "130": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "131": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "132": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "133": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "134": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "135": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "136": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "137": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "138": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "139": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "140": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "141": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "142": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "143": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "144": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "145": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "146": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "147": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "148": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "149": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "150": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "151": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "152": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "153": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "154": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "155": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "156": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "157": [
+   {
+    "dungeon": "SRN_Mission3",
+    "kind": "boss",
+    "by": "Young Green Dragon"
+   }
+  ],
+  "158": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "boss",
+    "by": "Lizard Lord"
+   }
+  ],
+  "159": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "160": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "161": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "162": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "163": [
+   {
+    "dungeon": "SRN_Mission2",
+    "kind": "boss",
+    "by": "Swamp King"
+   }
+  ],
+  "164": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "165": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Spider"
+   }
+  ],
+  "166": [
+   {
+    "dungeon": "SRN_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "167": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "realm",
+    "by": "Treant"
+   }
+  ],
+  "168": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "169": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "170": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "171": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "172": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "173": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "174": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "175": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "176": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "177": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "178": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "179": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "180": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "181": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "182": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "183": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "184": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "185": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "186": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "187": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "188": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "189": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "190": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "191": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "192": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "193": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "194": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "195": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "196": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "197": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "198": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "199": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "200": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "201": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "202": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "203": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "204": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "205": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "206": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "207": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "208": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "209": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "210": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "211": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "212": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "213": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "214": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "215": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "216": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "217": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "218": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "219": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "220": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "221": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "222": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "223": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "224": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "225": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "226": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "227": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "228": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "229": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "230": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "231": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "232": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "233": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "234": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "235": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "236": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "237": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "238": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "239": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "240": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "241": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "242": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "243": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "244": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "245": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "246": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "247": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "248": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "249": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "realm",
+    "by": "Wyrm"
+   }
+  ],
+  "250": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "251": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "252": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "253": [
+   {
+    "dungeon": "SRN_Mission4",
+    "kind": "boss",
+    "by": "Ooyak"
+   }
+  ],
+  "254": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "255": [
+   {
+    "dungeon": "SRN_Mission6",
+    "kind": "boss",
+    "by": "Devourer Great"
+   }
+  ],
+  "256": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "257": [
+   {
+    "dungeon": "SRN_Mission7",
+    "kind": "boss",
+    "by": "Green Dragon"
+   }
+  ],
+  "258": [
+   {
+    "dungeon": "SRN_Mission5",
+    "kind": "boss",
+    "by": "Great Lizard Lord"
+   }
+  ],
+  "259": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "260": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "261": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "262": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "263": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "264": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "265": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "266": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "267": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "268": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "269": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "270": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "271": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "272": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "273": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "274": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "275": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "276": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "277": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "278": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "279": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "280": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "281": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "282": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "283": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "284": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "285": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "286": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "287": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "288": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "289": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "290": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "291": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "292": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "293": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "294": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "295": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "296": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "297": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "298": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "299": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "300": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "301": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "302": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "303": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "304": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "305": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "306": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "307": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "308": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "309": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "310": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "311": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "312": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "313": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "314": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "315": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "316": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "317": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "318": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "319": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "320": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "321": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "322": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "323": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "324": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "325": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "326": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "327": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "328": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "329": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "330": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "331": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "332": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "boss",
+    "by": "Young Gray Dragon"
+   }
+  ],
+  "333": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "334": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "335": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "336": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "337": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "338": [
+   {
+    "dungeon": "CH_Mission2",
+    "kind": "boss",
+    "by": "Dog Chieftain"
+   }
+  ],
+  "339": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "340": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "341": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "342": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "343": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "344": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "boss",
+    "by": "Red Ghost Lord"
+   }
+  ],
+  "345": [
+   {
+    "dungeon": "CH_Mission1",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "346": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "347": [
+   {
+    "dungeon": "CH_Mission4",
+    "kind": "boss",
+    "by": "Greater Skeleton Boss"
+   }
+  ],
+  "348": [
+   {
+    "dungeon": "CH_Mission5",
+    "kind": "boss",
+    "by": "Demon Maligner"
+   }
+  ],
+  "349": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "350": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "351": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "352": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "353": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "354": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "355": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "356": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "357": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "358": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "359": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "360": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "361": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "362": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "363": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "364": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "365": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "366": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "367": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "368": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "369": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "370": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "371": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "372": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "373": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "374": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "375": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "376": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "377": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "378": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "379": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "380": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "381": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "382": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "383": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "384": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "385": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "386": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "387": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "388": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "389": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "390": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "391": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "392": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "393": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "394": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "395": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "396": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "397": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "398": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "399": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "400": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "401": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "402": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "403": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "404": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "405": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "406": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "407": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "408": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "409": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "410": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "411": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "412": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "413": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "414": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "415": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "416": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "417": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "418": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "419": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "420": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "421": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "422": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "423": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "424": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "425": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "426": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "427": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "428": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "boss",
+    "by": "Mummy Boss"
+   }
+  ],
+  "429": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "430": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "boss",
+    "by": "Jackal Chieftain"
+   }
+  ],
+  "431": [
+   {
+    "dungeon": "CH_Mission7",
+    "kind": "boss",
+    "by": "Bone Dragon"
+   }
+  ],
+  "432": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "433": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "434": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "435": [
+   {
+    "dungeon": "CH_Mission3",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "436": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Mummy"
+   }
+  ],
+  "437": [
+   {
+    "dungeon": "CH_Mission8",
+    "kind": "realm",
+    "by": "Wolf"
+   }
+  ],
+  "438": [
+   {
+    "dungeon": "CH_Mission6",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "439": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "440": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "441": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "442": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "443": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "444": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "445": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "446": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "447": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "448": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "449": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "450": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "451": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "452": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "453": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "454": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "455": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "456": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "457": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "458": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "459": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "460": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "461": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "462": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "463": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "464": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "465": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "466": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "467": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "468": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "469": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "470": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "471": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "472": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "473": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "474": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "475": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "476": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "477": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "478": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "479": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "480": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "481": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "482": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "483": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "484": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "485": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "486": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "487": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "488": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "489": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "490": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "491": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "492": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "493": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "494": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "495": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "496": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "497": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "498": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "499": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "500": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "501": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "502": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "503": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "504": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "505": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "506": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "507": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "508": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "509": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "510": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "511": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "512": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "513": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "514": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "515": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "516": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "517": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "518": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "519": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "520": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "521": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "522": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "523": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "realm",
+    "by": "Abomination"
+   }
+  ],
+  "524": [
+   {
+    "dungeon": "BT_Mission4",
+    "kind": "boss",
+    "by": "Steward Horst"
+   }
+  ],
+  "525": [
+   {
+    "dungeon": "SwampRoadConnectionMission",
+    "kind": "boss",
+    "by": "Arachnae"
+   }
+  ],
+  "526": [
+   {
+    "dungeon": "BT_Mission1",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "527": [
+   {
+    "dungeon": "BT_Mission2",
+    "kind": "boss",
+    "by": "Star Griffon"
+   }
+  ],
+  "528": [
+   {
+    "dungeon": "BT_Mission3",
+    "kind": "boss",
+    "by": "Meylour Summoner"
+   }
+  ],
+  "529": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "530": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "531": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "532": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "533": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "534": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "535": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "536": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "537": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "538": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "539": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "540": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "541": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "542": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "543": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "544": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "545": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "546": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "547": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "548": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "549": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "550": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "551": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "552": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "553": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "554": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "555": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "556": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "557": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "558": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "559": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "560": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "561": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "562": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "563": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "564": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "565": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "566": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "567": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "568": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "569": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "570": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "571": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "572": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "573": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "574": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "575": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "576": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "577": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "578": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "579": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "580": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "581": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "582": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "583": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "584": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "585": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "586": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "587": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "588": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "589": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "590": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "591": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "592": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "593": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "594": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "595": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "596": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "597": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "598": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "599": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "600": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "601": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "602": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "603": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "604": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "605": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "boss",
+    "by": "Coalglow"
+   }
+  ],
+  "606": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "607": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "608": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "609": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "610": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "611": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "612": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "boss",
+    "by": "Ashen Dryad Wizard"
+   }
+  ],
+  "613": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "614": [
+   {
+    "dungeon": "EG_Mission5",
+    "kind": "boss",
+    "by": "Priest of Krassnil"
+   }
+  ],
+  "615": [
+   {
+    "dungeon": "EG_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "616": [
+   {
+    "dungeon": "EG_Mission1",
+    "kind": "realm",
+    "by": "Dryad"
+   }
+  ],
+  "617": [
+   {
+    "dungeon": "EG_Mission2",
+    "kind": "realm",
+    "by": "Devourer"
+   }
+  ],
+  "618": [
+   {
+    "dungeon": "EG_Mission3",
+    "kind": "boss",
+    "by": "Sea Dragon"
+   }
+  ],
+  "619": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "620": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "621": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "622": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "623": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "624": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "625": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "626": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "627": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "628": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "629": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "630": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "631": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "632": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "633": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "634": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "635": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "636": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "637": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "638": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "639": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "640": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "641": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "642": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "643": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "644": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "645": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "646": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "647": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "648": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "649": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "650": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "651": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "652": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "653": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "654": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "655": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "656": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "657": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "658": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "659": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "660": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "661": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "662": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "663": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "664": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "665": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "666": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "667": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "668": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "669": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "670": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "671": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "672": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "673": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "674": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "675": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "676": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "677": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "678": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "679": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "680": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "681": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "682": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "683": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "684": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "685": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "686": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "687": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "688": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "689": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "690": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "691": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "692": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "693": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "694": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "695": [
+   {
+    "dungeon": "OMM_Mission1",
+    "kind": "boss",
+    "by": "Hobgoblin Chief"
+   }
+  ],
+  "696": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "boss",
+    "by": "Cyclops Chieftain"
+   }
+  ],
+  "697": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "698": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "699": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "700": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "701": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "702": [
+   {
+    "dungeon": "OMM_Mission2",
+    "kind": "boss",
+    "by": "Insane Villager"
+   }
+  ],
+  "703": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "704": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "boss",
+    "by": "Black Ghost Lord"
+   }
+  ],
+  "705": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "706": [
+   {
+    "dungeon": "OMM_Mission3",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "707": [
+   {
+    "dungeon": "OMM_Mission4",
+    "kind": "realm",
+    "by": "Ghost"
+   }
+  ],
+  "708": [
+   {
+    "dungeon": "OMM_Mission6",
+    "kind": "boss",
+    "by": "Red Dragon"
+   }
+  ],
+  "709": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "710": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "711": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "712": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "713": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "714": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "715": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "716": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "717": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "718": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "719": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "720": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "721": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "722": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "723": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "724": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "725": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "726": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "727": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "728": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "729": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "730": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "731": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "732": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "733": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "734": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "735": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "736": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "737": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "738": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "739": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "740": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "741": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "742": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "743": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "744": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "745": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "746": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "747": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "748": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "749": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "750": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "751": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "752": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "753": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "754": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "755": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "756": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "757": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "758": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "759": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "760": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "761": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "762": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "763": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "764": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "765": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "766": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "767": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "768": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "769": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "770": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "771": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "772": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "773": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "774": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "775": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "776": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "777": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "778": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "779": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "780": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "781": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "782": [
+   {
+    "dungeon": "OMM_Mission9",
+    "kind": "boss",
+    "by": "Moon Griffon"
+   }
+  ],
+  "783": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "784": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "785": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "786": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "realm",
+    "by": "Cyclops"
+   }
+  ],
+  "787": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "boss",
+    "by": "Rock Hulk King"
+   }
+  ],
+  "788": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "boss",
+    "by": "Lion Lord"
+   }
+  ],
+  "789": [
+   {
+    "dungeon": "OMM_Mission12",
+    "kind": "realm",
+    "by": "RockHulk"
+   }
+  ],
+  "790": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "791": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "792": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "793": [
+   {
+    "dungeon": "OMM_Mission7",
+    "kind": "boss",
+    "by": "Sun Griffon"
+   }
+  ],
+  "794": [
+   {
+    "dungeon": "OMM_Mission8",
+    "kind": "boss",
+    "by": "Rock Cyclops Chieftain"
+   }
+  ],
+  "795": [
+   {
+    "dungeon": "OMM_Mission5",
+    "kind": "realm",
+    "by": "Lion"
+   }
+  ],
+  "796": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "realm",
+    "by": "Goblin"
+   }
+  ],
+  "797": [
+   {
+    "dungeon": "OMM_Mission11",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "798": [
+   {
+    "dungeon": "OMM_Mission10",
+    "kind": "boss",
+    "by": "Gray Dragon"
+   }
+  ],
+  "799": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "800": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "801": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "802": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "803": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "804": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "805": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "806": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "807": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "808": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "809": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "810": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "811": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "812": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "813": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "814": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "815": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "816": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "817": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "818": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "819": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "820": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "821": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "822": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "823": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "824": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "825": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "826": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "827": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "828": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "829": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "830": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "831": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "832": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "833": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "834": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "835": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "836": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "837": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "838": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "839": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "840": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "841": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "842": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "843": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "844": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "845": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "846": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "847": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "848": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "849": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "850": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "851": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "852": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "853": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "854": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "855": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "856": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "857": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "858": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "859": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "860": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "861": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "862": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "863": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "864": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "865": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "866": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "867": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "868": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "869": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "870": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "871": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "872": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "873": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "874": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "875": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "876": [
+   {
+    "dungeon": "AC_Mission3",
+    "kind": "boss",
+    "by": "Ancient Gray Dragon"
+   }
+  ],
+  "877": [
+   {
+    "dungeon": "AC_Mission5",
+    "kind": "boss",
+    "by": "Ancient Silver Dragon"
+   }
+  ],
+  "878": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "realm",
+    "by": "Dread"
+   }
+  ],
+  "879": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "880": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "881": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "882": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "883": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "884": [
+   {
+    "dungeon": "AC_Mission4",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "885": [
+   {
+    "dungeon": "AC_Mission2",
+    "kind": "boss",
+    "by": "Dread Lord Verus"
+   }
+  ],
+  "886": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "boss",
+    "by": "Ancient Gold Dragon"
+   }
+  ],
+  "887": [
+   {
+    "dungeon": "AC_Mission1",
+    "kind": "realm",
+    "by": "Lizard"
+   }
+  ],
+  "888": [
+   {
+    "dungeon": "AC_Mission6",
+    "kind": "boss",
+    "by": "Nephit"
+   }
+  ],
+  "889": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "890": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "891": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "892": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "realm",
+    "by": "Construct"
+   }
+  ],
+  "893": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "894": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "895": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "896": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "897": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "898": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "899": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "realm",
+    "by": "Giant"
+   }
+  ],
+  "900": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "901": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "902": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "903": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "904": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "905": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "906": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "realm",
+    "by": "Giant"
+   }
+  ],
+  "907": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "908": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "909": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "910": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "911": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "realm",
+    "by": "Construct"
+   }
+  ],
+  "912": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "913": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "914": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "915": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "916": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "917": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "realm",
+    "by": "Minotaur"
+   }
+  ],
+  "918": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "919": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "920": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "921": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "922": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "realm",
+    "by": "Construct"
+   }
+  ],
+  "923": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "924": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "925": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "926": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "927": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "928": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "929": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "realm",
+    "by": "Giant"
+   }
+  ],
+  "930": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "931": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "932": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "933": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "934": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "935": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "936": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "realm",
+    "by": "Giant"
+   }
+  ],
+  "937": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "938": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "939": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "940": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "941": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "realm",
+    "by": "Construct"
+   }
+  ],
+  "942": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "943": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "944": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "945": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "946": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "947": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "realm",
+    "by": "Minotaur"
+   }
+  ],
+  "948": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "949": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "950": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "951": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "952": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "realm",
+    "by": "Construct"
+   }
+  ],
+  "953": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "954": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "955": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "956": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "957": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "958": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "959": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "realm",
+    "by": "Giant"
+   }
+  ],
+  "960": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "961": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "962": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "963": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "964": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "965": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "966": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "realm",
+    "by": "Giant"
+   }
+  ],
+  "967": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "boss",
+    "by": "Keeper"
+   }
+  ],
+  "968": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "969": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "boss",
+    "by": "Scarab Scorpion"
+   }
+  ],
+  "970": [
+   {
+    "dungeon": "SD_Mission4",
+    "kind": "boss",
+    "by": "Shazarai Visier"
+   }
+  ],
+  "971": [
+   {
+    "dungeon": "SD_Mission6",
+    "kind": "realm",
+    "by": "Construct"
+   }
+  ],
+  "972": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "973": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "boss",
+    "by": "Pitlord"
+   }
+  ],
+  "974": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "975": [
+   {
+    "dungeon": "SD_Mission1",
+    "kind": "boss",
+    "by": "Amenrahtep"
+   }
+  ],
+  "976": [
+   {
+    "dungeon": "SD_Mission2",
+    "kind": "realm",
+    "by": "Scarab"
+   }
+  ],
+  "977": [
+   {
+    "dungeon": "SD_Mission3",
+    "kind": "realm",
+    "by": "Minotaur"
+   }
+  ],
+  "978": [
+   {
+    "dungeon": "SD_Mission5",
+    "kind": "boss",
+    "by": "Greater Sand Worm"
+   }
+  ],
+  "979": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "980": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "981": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "982": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "983": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "984": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "985": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "986": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "987": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "988": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "989": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "990": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "991": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "992": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "993": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "994": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "995": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "996": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "997": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "998": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "999": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1000": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1001": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1002": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1003": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1004": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1005": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "1006": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1007": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1008": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1009": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "1010": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1011": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1012": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1013": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "1014": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1015": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1016": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1017": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1018": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1019": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1020": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "1021": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1022": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1023": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1024": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1025": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1026": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1027": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "1028": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1029": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1030": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1031": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1032": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1033": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1034": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1035": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "1036": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1037": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1038": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1039": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "1040": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1041": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1042": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1043": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "1044": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1045": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1046": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1047": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1048": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1049": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1050": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "1051": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1052": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1053": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1054": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1055": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1056": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1057": [
+   {
+    "dungeon": "JC_Mission2",
+    "kind": "boss",
+    "by": "Greater Bone Golem"
+   }
+  ],
+  "1058": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1059": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1060": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "boss",
+    "by": "Imperial Champion"
+   }
+  ],
+  "1061": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1062": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Shade"
+   }
+  ],
+  "1063": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "boss",
+    "by": "Defector Mage"
+   }
+  ],
+  "1064": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "boss",
+    "by": "Brigand Champ"
+   }
+  ],
+  "1065": [
+   {
+    "dungeon": "JC_Mission3",
+    "kind": "realm",
+    "by": "Skeleton"
+   }
+  ],
+  "1066": [
+   {
+    "dungeon": "JC_Mission11",
+    "kind": "realm",
+    "by": "Human"
+   }
+  ],
+  "1067": [
+   {
+    "dungeon": "JC_Mission1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1068": [
+   {
+    "dungeon": "JC_Mission9",
+    "kind": "boss",
+    "by": "Bandit Twin"
+   }
+  ],
+  "1069": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1070": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "1071": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1072": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1073": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1074": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1075": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1076": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1077": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "1078": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Ratling"
+   }
+  ],
+  "1079": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1080": [
+   {
+    "dungeon": "JC_Mini1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1081": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1082": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1083": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "1084": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1085": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "1086": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1087": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1088": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1089": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Ratling"
+   }
+  ],
+  "1090": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1091": [
+   {
+    "dungeon": "JC_Mini1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1092": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1093": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1094": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1095": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1096": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1097": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1098": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1099": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1100": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "1101": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1102": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1103": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1104": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1105": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1106": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1107": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "1108": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Ratling"
+   }
+  ],
+  "1109": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1110": [
+   {
+    "dungeon": "JC_Mini1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1111": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1112": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1113": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "1114": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1115": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "1116": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1117": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1118": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1119": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Ratling"
+   }
+  ],
+  "1120": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1121": [
+   {
+    "dungeon": "JC_Mini1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1122": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1123": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1124": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1125": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1126": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1127": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1128": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1129": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1130": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "1131": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1132": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1133": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1134": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1135": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1136": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1137": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "1138": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Ratling"
+   }
+  ],
+  "1139": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1140": [
+   {
+    "dungeon": "JC_Mini1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1141": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1142": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1143": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "realm",
+    "by": "Spirit"
+   }
+  ],
+  "1144": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1145": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Raptor"
+   }
+  ],
+  "1146": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1147": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1148": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1149": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "realm",
+    "by": "Ratling"
+   }
+  ],
+  "1150": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1151": [
+   {
+    "dungeon": "JC_Mini1",
+    "kind": "realm",
+    "by": "Imperial"
+   }
+  ],
+  "1152": [
+   {
+    "dungeon": "JC_Mission10",
+    "kind": "boss",
+    "by": "Temple Dragon"
+   }
+  ],
+  "1153": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "boss",
+    "by": "Portal Master"
+   }
+  ],
+  "1154": [
+   {
+    "dungeon": "JC_Mission7",
+    "kind": "boss",
+    "by": "Emperor"
+   }
+  ],
+  "1155": [
+   {
+    "dungeon": "JC_Mission6",
+    "kind": "boss",
+    "by": "Nightmare Dragon"
+   }
+  ],
+  "1156": [
+   {
+    "dungeon": "JC_Mission4",
+    "kind": "boss",
+    "by": "Sewer King"
+   }
+  ],
+  "1157": [
+   {
+    "dungeon": "JC_Mission5",
+    "kind": "realm",
+    "by": "Demon"
+   }
+  ],
+  "1158": [
+   {
+    "dungeon": "JC_Mission8",
+    "kind": "boss",
+    "by": "Barracks Captain"
+   }
+  ],
+  "1159": [
+   {
+    "special": "Halloween event"
+   }
+  ],
+  "1160": [
+   {
+    "special": "Halloween event"
+   }
+  ],
+  "1161": [
+   {
+    "special": "Halloween event"
+   }
+  ],
+  "1162": [
+   {
+    "special": "Special reward"
+   }
+  ],
+  "1163": [
+   {
+    "special": "Special reward"
+   }
+  ],
+  "1164": [
+   {
+    "special": "Special reward"
+   }
+  ],
+  "1165": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1166": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1167": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1168": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1169": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1170": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1171": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1172": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1173": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1174": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1175": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1176": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1177": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1178": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1179": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1180": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1181": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ],
+  "1182": [
+   {
+    "special": "Treasure Trove (lockbox)"
+   }
+  ]
+ }
+}
