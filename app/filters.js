@@ -41,6 +41,16 @@
         const shared = Object.keys(skillCls).filter((k) => skillCls[k].size > 1);
         skillGroups.push({ label: 'Every class', options: shared.map((k) => opt(k, skillName(k))).concat([opt('-', 'No skill rune')]) });
 
+        // Magic bonuses: the exact combinations (two on Rare and Legendary, one on Magic), then "includes".
+        const magicNames = data.magic || {};
+        const magicKeys = Object.keys(magicNames);
+        const parts = magicKeys.filter((k) => !k.includes('+'));
+        const magicGroups = [
+            { label: 'Two bonuses (Rare, Legendary)', options: magicKeys.filter((k) => k.includes('+')).map((k) => opt('=' + k, magicNames[k])) },
+            { label: 'One bonus (Magic)', options: parts.map((k) => opt('=' + k, magicNames[k])) },
+            { label: 'Includes', options: parts.map((k) => opt('+' + k, 'Any with ' + magicNames[k])) },
+        ];
+
         // Where to get it: one optgroup per zone (in game order), then the items that are not dungeon drops.
         const dungeons = data.dungeons || {};
         const zones = [];
@@ -63,6 +73,11 @@
                 test: (it, v) => it.runes.includes(v),
             },
             { key: 'skill', label: 'Skill rune', any: 'Any skill rune', groups: skillGroups, test: (it, v) => (v === '-' ? !it.skill : it.skill === v) },
+            {
+                // "=Speed+GoldDrop" is that exact pair; "+GoldDrop" is any item with Gold Find in it.
+                key: 'magic', label: 'Magic', any: 'Any magic', groups: magicGroups,
+                test: (it, v) => (v[0] === '=' ? it.magic === v.slice(1) : it.magicParts.includes(v.slice(1))),
+            },
             {
                 key: 'where', label: 'Obtained in', any: 'Anywhere', groups: zones,
                 test: (it, v) => (v[0] === '~' ? it.special === v.slice(1) : it.sources.some((s) => s.dungeon === v)),

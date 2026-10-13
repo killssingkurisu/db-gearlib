@@ -93,6 +93,16 @@ check('name search combines with dropdowns and drives counts', () => {
     assert.ok(results.length > 0 && results.every((i) => i.cls === 'Mage' && /staff/i.test(i.name)));
     assert.strictEqual(counts.class.Rogue, run({ class: 'Rogue' }, 'staff').results.length);
 });
+check('magic: exact pair or any that includes a bonus', () => {
+    const pair = run({ magic: '=Speed+GoldDrop' }).results;
+    assert.strictEqual(pair.length, 182 * 2);
+    assert.ok(pair.every((i) => i.magic === 'Speed+GoldDrop'));
+    const gold = run({ magic: '+GoldDrop' }).results;
+    assert.strictEqual(gold.length, 283 + 2 * (205 + 204 + 182)); // Gold Find alone, and with each other bonus
+    assert.strictEqual(run({ magic: '=GoldDrop' }).results.length, 283);
+    const { counts } = run({ rarity: 'M' });
+    assert.strictEqual(counts.magic['=ItemDrop+GoldDrop'] || 0, 0); // Magic items carry one bonus
+});
 check('parseScan rejects meter exports', () => assert.throws(() => M.parseScan({ format: 'dbb-dps' }), /DPS meter/));
 
 console.log(passed + ' checks passed' + (process.exitCode ? ', some failed' : ''));
