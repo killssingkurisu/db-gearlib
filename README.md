@@ -7,6 +7,7 @@ Live page: https://killssingkurisu.github.io/db-gearlib/
 ## Using it
 
 - **Table.** One line per item, a column per field: Name, Class, Type, Rarity, Focus, Lv, Atk, Exp, Def, Total, Rune 1, Rune 2, Skill rune, Magic, Obtained in, ID. Click a header to sort by it, again to reverse; stat columns start highest first and unknown stats always sort last. Click a name for where it drops (dungeon, zone, boss or monsters), and the rune, skill rune and magic text.
+- **Search.** The box above the dropdowns matches item names: every word typed must appear, in any order, ignoring case, spaces and punctuation (`skull necro` finds Necromancer's Skull, `korgal` finds Kor'Gal's…). It combines with the dropdowns, and their counts follow it. Press `/` to jump to it, Esc to clear it.
 - **Filters.** Separate dropdowns: Class, Gear type, Rarity, Stat focus, Rune (either rune slot), Skill rune (only the picked class's), Obtained in (every dungeon, grouped by zone, plus the items that aren't dungeon drops). They all apply together. Each option shows how many items it would give with the other dropdowns as they are.
 - **CSV.** *Copy CSV* copies every matching row (not only the ones shown) with the same columns, ready to paste into a spreadsheet. *Download CSV* saves the same as a file; it shows only when the page is opened on its own, since framed previews can't save files.
 
@@ -32,7 +33,7 @@ It reads GearTypes and EntTypes from `Login.swz`, English dungeon names from `Ga
 | Path | What |
 |---|---|
 | `index.html`, `app/gearlib.css`, `app/gearlib.js` | the page |
-| `app/filters.js` | the dropdowns and the option counts (also runs in Node) |
+| `app/filters.js` | the name search, the dropdowns and the option counts (also runs in Node) |
 | `app/model.js` | builds the item rows from the gear list and takes stats from the scans |
 | `app/data/gear-data.js` | generated: every item plus rune, skill rune and magic names |
 | `app/data/seed-scans.js` | generated: the scans, trimmed |

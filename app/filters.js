@@ -2,8 +2,11 @@
  * The dropdown filters. Each is one <select>; an empty value means "any". All filters are and.
  *
  *   defs(data, picked)              the dropdowns, their options (with optgroups) and tests
- *   apply(items, defs, picked)      { results, counts } — counts[key][value] is how many items an
+ *   apply(items, defs, picked, q)   { results, counts } — counts[key][value] is how many items an
  *                                   option would show with the other filters as they are
+ *   nameMatcher(q)                  the name search: every word typed must appear in the name, in
+ *                                   any order, ignoring case, spaces and punctuation ("skull necro"
+ *                                   finds Necromancer's Skull, "korgal" finds Kor'Gal's…); null when empty
  *
  * Works in the browser (window.GearFilters) and in Node (test/run.js).
  */
@@ -71,7 +74,19 @@
         return def.groups ? def.groups.reduce((a, g) => a.concat(g.options), []) : def.options;
     }
 
-    function apply(items, list, picked) {
+    const words = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    function nameMatcher(q) {
+        const parts = words(q).split(' ').filter(Boolean);
+        if (!parts.length) return null;
+        return (it) => {
+            if (!it._words) { it._words = words(it.name); it._compact = it._words.replace(/ /g, ''); }
+            return parts.every((p) => it._words.includes(p) || it._compact.includes(p)); // "korgal" finds Kor'Gal's
+        };
+    }
+
+    function apply(allItems, list, picked, q) {
+        const match = nameMatcher(q);
+        const items = match ? allItems.filter(match) : allItems;
         const active = list.map((d) => (picked[d.key] ? d : null));
         const counts = {};
         for (const d of list) counts[d.key] = {};
@@ -95,5 +110,5 @@
         return { results, counts };
     }
 
-    return { defs, apply, optionsOf };
+    return { defs, apply, optionsOf, nameMatcher };
 });

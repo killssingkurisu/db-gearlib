@@ -28,6 +28,7 @@
     const saved = loadStore();
     const state = {
         picked: saved.picked && typeof saved.picked === 'object' ? saved.picked : {},
+        q: typeof saved.q === 'string' ? saved.q : '',
         sort: saved.sort || 'default', // a column key, or 'default'
         dir: saved.dir === -1 ? -1 : 1,
         shown: PAGE,
@@ -40,7 +41,7 @@
         clearTimeout(saveTimer);
         saveTimer = setTimeout(() => {
             try {
-                localStorage.setItem(STORE_KEY, JSON.stringify({ picked: state.picked, sort: state.sort, dir: state.dir }));
+                localStorage.setItem(STORE_KEY, JSON.stringify({ picked: state.picked, q: state.q, sort: state.sort, dir: state.dir }));
             } catch (_e) { /* storage full or blocked: the page still works */ }
         }, 250);
     }
@@ -141,7 +142,8 @@
                 + '<select id="f-' + d.key + '" data-key="' + d.key + '"><option value="">' + esc(d.any) + '</option>' + body + '</select></label>';
         }).join('');
         if (focused && focused.startsWith('f-') && $(focused)) $(focused).focus();
-        $('clearAll').hidden = !Object.keys(state.picked).some((k) => state.picked[k]);
+        $('clearAll').hidden = !state.q.trim() && !Object.keys(state.picked).some((k) => state.picked[k]);
+        $('q').classList.toggle('on', !!state.q.trim());
     }
 
     function renderHead() {
@@ -210,14 +212,14 @@
         const defs = F.defs(DATA, state.picked);
         // A skill rune of a class no longer picked would hide everything; drop it.
         if (state.picked.skill && !F.optionsOf(defs.find((d) => d.key === 'skill')).some((o) => o.v === state.picked.skill)) delete state.picked.skill;
-        const { results, counts } = F.apply(model.items, defs, state.picked);
+        const { results, counts } = F.apply(model.items, defs, state.picked, state.q);
         renderFilters(defs, counts);
         lastResults = sortItems(results);
         const total = model.items.length;
         $('count').textContent = results.length === total ? fmt(total) + ' items' : fmt(results.length) + ' of ' + fmt(total) + ' items';
         const list = $('list');
         if (!lastResults.length) {
-            list.innerHTML = '<tr><td colspan="' + COLS.length + '" class="empty">Nothing matches these filters. <button type="button" class="linkbtn" data-reset="1">Clear filters</button></td></tr>';
+            list.innerHTML = '<tr><td colspan="' + COLS.length + '" class="empty">' + (state.q.trim() ? 'No item name matches “' + esc(state.q.trim()) + '” with these filters.' : 'Nothing matches these filters.') + ' <button type="button" class="linkbtn" data-reset="1">Clear filters</button></td></tr>';
         } else {
             const hot = state.picked.rune || '';
             list.innerHTML = lastResults.slice(0, state.shown).map((it, n) => renderRow(it, hot, n)).join('');
@@ -254,7 +256,20 @@
         if (sel.value) state.picked[sel.dataset.key] = sel.value; else delete state.picked[sel.dataset.key];
         rerender();
     });
-    function clearFilters() { state.picked = {}; rerender(); }
+    function clearFilters() { state.picked = {}; state.q = ''; $('q').value = ''; rerender(); }
+    let qTimer = null;
+    $('q').addEventListener('input', (e) => {
+        clearTimeout(qTimer);
+        const v = e.target.value;
+        qTimer = setTimeout(() => { state.q = v; rerender(); }, 120);
+    });
+    $('q').addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && e.target.value) { e.target.value = ''; clearTimeout(qTimer); state.q = ''; rerender(); }
+    });
+    document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement ? document.activeElement.tagName : '';
+        if (e.key === '/' && !/^(INPUT|SELECT|TEXTAREA)$/.test(tag)) { e.preventDefault(); $('q').focus(); }
+    });
     $('clearAll').addEventListener('click', clearFilters);
     $('gridHead').addEventListener('click', (e) => {
         const b = e.target.closest('[data-sort]');
@@ -322,5 +337,6 @@
         return;
     }
     rebuild();
+    $('q').value = state.q;
     render();
 })();

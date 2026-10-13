@@ -22,7 +22,7 @@ let passed = 0;
 function check(name, fn) {
     try { fn(); passed++; } catch (e) { console.error('FAIL ' + name + '\n  ' + e.message); process.exitCode = 1; }
 }
-const run = (picked) => F.apply(items, F.defs(data, picked), picked);
+const run = (picked, q) => F.apply(items, F.defs(data, picked), picked, q);
 
 check('catalog size', () => assert.strictEqual(items.length, 3546));
 check('every scanned item matched', () => characters.forEach((c) => assert.deepStrictEqual(c.unmatched, [], c.name)));
@@ -80,6 +80,18 @@ check('obtained-in dropdown', () => {
     assert.ok(r.length > 0 && r.every((i) => i.sources.some((x) => x.dungeon === 'BT_Mission1')));
     assert.strictEqual(run({ where: '~Treasure Trove (lockbox)' }).results.length, 18 * 3);
     assert.strictEqual(run({ where: '~Halloween event' }).results.length, 3 * 3);
+});
+check('name search: any order, any case, punctuation ignored', () => {
+    const r = run({}, 'skull NECRO').results;
+    assert.deepStrictEqual(Array.from(new Set(r.map((i) => i.name))), ["Necromancer's Skull"]);
+    const korgal = run({}, "kor'gal").results.length;
+    assert.ok(korgal > 0 && run({}, 'korgal').results.length === korgal && run({}, 'KOR GAL').results.length === korgal);
+    assert.strictEqual(run({}, '   ').results.length, 3546);
+});
+check('name search combines with dropdowns and drives counts', () => {
+    const { results, counts } = run({ class: 'Mage' }, 'staff');
+    assert.ok(results.length > 0 && results.every((i) => i.cls === 'Mage' && /staff/i.test(i.name)));
+    assert.strictEqual(counts.class.Rogue, run({ class: 'Rogue' }, 'staff').results.length);
 });
 check('parseScan rejects meter exports', () => assert.throws(() => M.parseScan({ format: 'dbb-dps' }), /DPS meter/));
 
