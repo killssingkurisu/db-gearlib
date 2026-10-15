@@ -7,6 +7,7 @@
  *                           Scanner's list read from Login.swz) plus rune, skill rune and magic
  *                           names (data/names.json, from the DPS Calculator's game data)
  *   app/data/seed-scans.js  the dbb-inventory scans in data/scans/, trimmed to what the page uses
+ *   app/data/mount-data.js  every mount (data/mounts.json) for the Mounts section
  *
  * Run: node tools/build-data.js
  */
@@ -84,3 +85,14 @@ const rows = items.map((it) => [it.name, it.cls, M.SLOT_NAME[it.slot], M.RARITY_
     M.sourceZone(it), M.sourceText(it), M.droppedBy(it), it.id]);
 fs.writeFileSync(path.join(root, 'gear.csv'), [header].concat(rows).map((r) => r.map(cell).join(',')).join('\r\n') + '\r\n');
 console.log('gear.csv: %d rows', rows.length);
+
+// app/data/mount-data.js: every mount (data/mounts.json, made by tools/mounts/mount_jobs.py from
+// the live game's Game.swz and Login.swz). Each one needs its two pictures in mounts/.
+const mountData = read('data/mounts.json');
+for (const m of mountData.mounts) {
+    for (const size of ['thumb', 'large']) {
+        if (!fs.existsSync(path.join(root, 'mounts', size, m.key + '.webp'))) throw new Error('mounts/' + size + '/' + m.key + '.webp is missing');
+    }
+}
+fs.writeFileSync(path.join(root, 'app/data/mount-data.js'), banner + 'window.DBB_MOUNTS = ' + JSON.stringify(mountData) + ';\n');
+console.log('mount-data.js: %d mounts', mountData.mounts.length);

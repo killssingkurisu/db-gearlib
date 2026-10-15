@@ -39,11 +39,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Build one self-contained page
+      - name: Build one self-contained file per page
         run: |
           node tools/build-single.js
           mkdir -p _site
           cp dist/gear-library.html _site/index.html
+          cp dist/mounts.html _site/mounts.html
+          cp -r mounts _site/mounts
           cp gear.csv _site/gear.csv
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5

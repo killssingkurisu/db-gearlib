@@ -105,4 +105,54 @@ check('magic: exact pair or any that includes a bonus', () => {
 });
 check('parseScan rejects meter exports', () => assert.throws(() => M.parseScan({ format: 'dbb-dps' }), /DPS meter/));
 
+/* ---------- Mounts ---------- */
+
+const mounts = loadWindowScript('app/data/mount-data.js', 'DBB_MOUNTS').mounts;
+const mount = (key) => mounts.find((m) => m.key === key);
+// Width and height of a WebP file (VP8X, VP8 or VP8L).
+function webpSize(file) {
+    const b = fs.readFileSync(file);
+    assert.strictEqual(b.toString('ascii', 0, 4) + b.toString('ascii', 8, 12), 'RIFFWEBP', file + ' is not a WebP');
+    const kind = b.toString('ascii', 12, 16);
+    if (kind === 'VP8X') return [1 + b.readUIntLE(24, 3), 1 + b.readUIntLE(27, 3)];
+    if (kind === 'VP8 ') return [b.readUInt16LE(26) & 0x3fff, b.readUInt16LE(28) & 0x3fff];
+    const bits = b.readUInt32LE(21);
+    return [1 + (bits & 0x3fff), 1 + ((bits >> 14) & 0x3fff)];
+}
+check('108 mounts, ids 1 to 108, one each', () => {
+    assert.strictEqual(mounts.length, 108);
+    assert.deepStrictEqual(mounts.map((m) => m.id), Array.from({ length: 108 }, (_v, i) => i + 1));
+    assert.strictEqual(new Set(mounts.map((m) => m.key)).size, 108);
+});
+check('mount names are the live game\'s, one per mount', () => {
+    assert.strictEqual(new Set(mounts.map((m) => m.name)).size, 108);
+    assert.deepStrictEqual(mounts.filter((m) => m.name === 'Ancient Crypt Walker').map((m) => m.key), ['MountInfernal']);
+    assert.strictEqual(mount('MountDrake3').name, 'Flarecrest Fangrasaur');
+    assert.strictEqual(mount('MountInfernal2').name, 'Lastlight Walker');
+    assert.strictEqual(mount('MountWolfBear2').name, 'Nighthowl Wolfbear');
+    assert.strictEqual(mount('MountDraftHorse').name, 'Buckskin Horse');
+    assert.strictEqual(mount('MountLockbox01L02').name, 'Hatebreed Charger');
+});
+check('mount rigs, rarities and levels', () => {
+    assert.strictEqual(mounts.filter((m) => m.rig === 'Horse').length, 63);
+    assert.strictEqual(mounts.filter((m) => m.rig === 'Dire').length, 45);
+    assert.deepStrictEqual(mounts.filter((m) => m.rarity === 'L').map((m) => m.key), ['MountLockbox01L01', 'MountLockbox01L02']);
+    assert.ok(mounts.every((m) => m.level === 20 || m.level === 40));
+});
+check('every mount has both pictures at their frame size', () => {
+    for (const m of mounts) {
+        assert.deepStrictEqual(webpSize(path.join(root, 'mounts/thumb', m.key + '.webp')), [192, 128], m.key);
+        assert.deepStrictEqual(webpSize(path.join(root, 'mounts/large', m.key + '.webp')), [480, 320], m.key);
+    }
+    assert.strictEqual(fs.readdirSync(path.join(root, 'mounts/thumb')).length, 108);
+    assert.strictEqual(fs.readdirSync(path.join(root, 'mounts/large')).length, 108);
+});
+check('both pages carry the Gears | Mounts top bar', () => {
+    for (const [file, on] of [['index.html', 'Gears'], ['mounts.html', 'Mounts']]) {
+        const html = fs.readFileSync(path.join(root, file), 'utf8');
+        assert.ok(/<a class="tab[^"]*" href="\.\/"[^>]*>Gears<\/a>/.test(html) && /<a class="tab[^"]*" href="mounts\.html"[^>]*>Mounts<\/a>/.test(html), file);
+        assert.ok(new RegExp('<a class="tab on"[^>]*aria-current="page">' + on + '</a>').test(html), file + ' marks ' + on);
+    }
+});
+
 console.log(passed + ' checks passed' + (process.exitCode ? ', some failed' : ''));

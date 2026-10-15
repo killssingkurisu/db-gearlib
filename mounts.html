@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DB Mounts</title>
+<meta name="description" content="Every mount in Dungeon Blitz with its picture, name, rarity, level and idol cost.">
+<link rel="stylesheet" href="app/gearlib.css">
+</head>
+<body>
+<div class="page" id="page">
+  <header class="top">
+    <nav class="tabs" aria-label="Library">
+      <a class="tab" href="./">Gears</a>
+      <span class="tabsep" aria-hidden="true"></span>
+      <a class="tab on" href="mounts.html" aria-current="page">Mounts</a>
+    </nav>
+    <p class="sub" id="summary">Loading the game's mounts…</p>
+  </header>
+
+  <section class="panel results" aria-label="Mounts">
+    <div class="searchrow">
+      <label class="visually-hidden" for="q">Search mounts by name</label>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search by name or code name…  (press / to jump here)">
+    </div>
+    <div class="filterbar" id="filterbar"></div>
+    <div class="head reshead">
+      <span class="sub" id="count"></span>
+      <button class="linkbtn" id="clearAll" type="button" hidden>Clear filters</button>
+      <button class="linkbtn" id="sortReset" type="button" hidden>Default order</button>
+      <span class="spacer"></span>
+      <button class="btn" id="copyCsv" type="button" title="Copy every matching mount as CSV, to paste into a spreadsheet">Copy CSV</button>
+      <button class="btn primary" id="saveCsv" type="button" title="Save every matching mount as a .csv file" hidden>Download CSV</button>
+    </div>
+    <div class="tablewrap" id="tablewrap">
+      <table class="grid mgrid" id="grid">
+        <thead><tr id="gridHead"></tr></thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span id="dataNote"></span>
+    <span>Names, rarities, levels and idol costs from the game's mount list. Pictures drawn from the game's own art with its art sets and colour swaps. Part of the Dungeon Blitz R tools alongside the <a href="https://killssingkurisu.github.io/db-dps-calculator/">DPS Calculator</a>.</span>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="app/data/mount-data.js"></script>
+<script src="app/mounts.js"></script>
+</body>
+</html>

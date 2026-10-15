@@ -71,13 +71,20 @@ button, input, select { font: inherit; color: inherit; }
 .linkbtn:hover { color: var(--parch); }
 .linkbtn:focus-visible { outline: 2px solid var(--cyan); }
 
-/* ---------- header ---------- */
-.top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.brand { display: flex; align-items: baseline; gap: 0.6em; flex-wrap: wrap; flex: 1; min-width: 0; }
-.brand .dot { align-self: center; }
-.brand h1 { margin: 0; font-size: 1.7em; font-weight: 700; letter-spacing: 0.01em; text-shadow: 0 1px 0 #000; }
-.brand .sub { font-size: 0.92em; }
-.topactions { display: flex; gap: 8px; }
+/* ---------- top bar: one tab per section (Gears | Mounts) ---------- */
+.top { display: flex; align-items: flex-end; gap: 0.4em 1.2em; flex-wrap: wrap; border-bottom: 1px solid var(--brass); padding: 0 0.2em; }
+.tabs { display: flex; align-items: stretch; gap: 0; }
+.tab {
+  display: inline-flex; align-items: center; gap: 0.45em; padding: 0.3em 0.9em 0.4em; margin-bottom: -1px;
+  font-size: 1.32em; font-weight: 700; letter-spacing: 0.01em; color: var(--parch-faint); text-decoration: none;
+  border: 1px solid transparent; border-bottom: 0; border-radius: 5px 5px 0 0; text-shadow: 0 1px 0 #000;
+}
+.tab::before { content: ""; width: 0.46em; height: 0.46em; border-radius: 50%; border: 1px solid currentColor; flex: none; }
+.tab:hover { color: var(--parch); }
+.tab.on { color: var(--parch); background: var(--ink); border-color: var(--brass); }
+.tab.on::before { background: var(--brass); border-color: var(--brass); }
+.tabsep { width: 1px; margin: 0.55em 0.35em 0.5em; background: var(--brass-dim); }
+.top .sub { flex: 1; text-align: right; padding-bottom: 0.5em; min-width: 12em; }
 
 /* ---------- name search ---------- */
 .searchrow { padding-bottom: 0.6em; }
@@ -164,6 +171,29 @@ button, input, select { font: inherit; color: inherit; }
 .grid td.empty { padding: 1.4em 0.5em; color: var(--parch-dim); text-align: center; white-space: normal; background: none; }
 .empty .ex { margin-top: 0.4em; }
 
+/* ---------- mounts: a compact table, one line per mount ---------- */
+.mgrid td { padding-block: 0.12em; }
+.mgrid td.c-pic { width: 4.9em; padding: 0.1em 0.35em; }
+.mgrid .pic { display: block; width: 72px; height: 48px; border-radius: 3px; background: var(--well); }
+.mgrid tbody tr.row:hover .pic, .mgrid tbody tr.row.open .pic { background: var(--well-hi); }
+.mgrid .picbtn { all: unset; display: block; cursor: pointer; border-radius: 3px; }
+.mgrid .picbtn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 1px; }
+.mgrid td.c-key { color: var(--parch-faint); font-size: 0.92em; }
+.mgrid td.c-rig, .mgrid td.c-level { color: var(--parch-dim); }
+.mgrid td.c-idols { color: var(--citrine); }
+.mgrid td.c-name { left: 0; }
+.mgrid td.c-desc { width: 100%; max-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--parch-faint); }
+.mgrid td.c-rarity.r-L { color: var(--legendary); }
+.mgrid td.c-rarity.r-R { color: var(--rare); }
+.mdetail { max-width: calc(100vw - 72px); display: flex; gap: 0.6em 1.2em; padding: 0.5em 0.6em 0.8em; align-items: flex-start; flex-wrap: wrap; font-size: 0.88em; }
+.mdetail img { width: 240px; max-width: 100%; height: auto; aspect-ratio: 3 / 2; flex: none; border-radius: 4px; background: var(--ink-solid); border: 1px solid var(--brass-dim); }
+.mdetail .txt { flex: 1; min-width: min(100%, 16em); max-width: 46em; display: flex; flex-direction: column; gap: 0.35em; }
+.mdetail .desc { color: var(--parch); margin: 0; }
+.mdetail .desc.none { color: var(--parch-faint); }
+.mdetail dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.1em 0.9em; }
+.mdetail dt { color: var(--parch-faint); }
+.mdetail dd { margin: 0; color: var(--parch-dim); }
+
 .foot { display: flex; flex-wrap: wrap; gap: 0.3em 1.5em; justify-content: space-between; font-size: 0.8em; color: var(--parch-faint); padding: 0 0.2em; }
 
 /* ---------- drop + toast ---------- */
@@ -182,6 +212,7 @@ button, input, select { font: inherit; color: inherit; }
 @media (max-width: 600px) {
   .tablewrap { max-height: 75vh; }
   .grid td.c-name { max-width: 12em; }
-  .brand h1 { font-size: 1.45em; }
+  .tab { font-size: 1.15em; padding-inline: 0.65em; }
+  .top .sub { text-align: left; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
