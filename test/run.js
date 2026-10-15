@@ -98,10 +98,27 @@ check('magic: exact pair or any that includes a bonus', () => {
     assert.strictEqual(pair.length, 182 * 2);
     assert.ok(pair.every((i) => i.magic === 'Speed+GoldDrop'));
     const gold = run({ magic: '+GoldDrop' }).results;
-    assert.strictEqual(gold.length, 283 + 2 * (205 + 204 + 182)); // Gold Find alone, and with each other bonus
+    assert.strictEqual(gold.length, 283 + 2 * (206 + 202 + 182)); // Gold Find alone, and with each other bonus
     assert.strictEqual(run({ magic: '=GoldDrop' }).results.length, 283);
     const { counts } = run({ rarity: 'M' });
     assert.strictEqual(counts.magic['=ItemDrop+GoldDrop'] || 0, 0); // Magic items carry one bonus
+});
+check('item details follow the live game, stats the new scans', () => {
+    // Gork's Vagrant Violator turned from Defense to Attack focus in the live game, and the scan shows Attack stats.
+    const g = items.find((i) => i.name === "Gork's Vagrant Violator" && i.rarity === 'L');
+    assert.strictEqual(g.focus, 'Attack');
+    assert.deepStrictEqual(g.stats, { attack: 912, expertise: 66, defense: 0 });
+    assert.strictEqual(g.statSource, 'scan');
+    // Legendaries carry their own skill runes, named and filed under the skill they boost.
+    assert.strictEqual(g.skill, 'LegendaryQuickStrike');
+    assert.strictEqual(g.skillName, 'Quick Strike');
+    assert.ok(/·/.test(data.skillRunes.LegendaryQuickStrike.desc));
+    const cleave = run({ skill: 'Cleave' }).results;
+    assert.ok(cleave.some((i) => i.skill === 'LegendaryCleave') && cleave.some((i) => i.skill === 'Cleave'));
+    assert.ok(cleave.every((i) => i.skillBase === 'Cleave'));
+    // Every Legendary has stats; all but one come from its own scan.
+    assert.strictEqual(items.filter((i) => i.rarity === 'L' && !i.stats).length, 0);
+    assert.deepStrictEqual(items.filter((i) => i.statSource === 'kind').map((i) => i.name), ['The Empress Staff']);
 });
 check('parseScan rejects meter exports', () => assert.throws(() => M.parseScan({ format: 'dbb-dps' }), /DPS meter/));
 

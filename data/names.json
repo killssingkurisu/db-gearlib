@@ -361,6 +361,276 @@
   "WildFire": {
    "name": "WildFire",
    "desc": "+10% Wildfire damage"
+  },
+  "LegendaryBarrier": {
+   "name": "Unstable Barrier",
+   "desc": "+20% Unstable Barrier durability · +15% Second Wind healing power",
+   "base": "Barrier"
+  },
+  "LegendaryBerserker": {
+   "name": "Berserker",
+   "desc": "+15% Berserker health regen · +3 second Cleaving Blows duration",
+   "base": "Berserker"
+  },
+  "LegendaryCleansingLight": {
+   "name": "Cleansing Light",
+   "desc": "+10% Sacred Light duration · +10% Hallowed Reckoning healing power",
+   "base": "CleansingLight"
+  },
+  "LegendaryCleave": {
+   "name": "Cleave",
+   "desc": "+15% Cleave damage · +10% Holy Smash damage vs Staggered",
+   "base": "Cleave"
+  },
+  "LegendaryDecoy": {
+   "name": "Decoy",
+   "desc": "+10% Decoy poison damage · Assassinate adds 2 stacks of Bleed",
+   "base": "Decoy"
+  },
+  "LegendaryDefiance": {
+   "name": "Defiance",
+   "desc": "+10% Defiance damage · Shield Flurry adds Armor Bane",
+   "base": "Defiance"
+  },
+  "LegendaryEnfeeble": {
+   "name": "Weaken",
+   "desc": "+15% Attack Speed reduction · +10% Withering Mist damage vs Bind",
+   "base": "Enfeeble"
+  },
+  "LegendaryFireBlast": {
+   "name": "Fire Blast",
+   "desc": "Adds 2 Stacks of Burn to Fire Blast · +1% Inferno damage per Burn stack",
+   "base": "FireBlast"
+  },
+  "LegendaryFirePillar": {
+   "name": "Flame Wave",
+   "desc": "+15% Flame Wave damage · +20% Conflagration trail DoT damage",
+   "base": "FirePillar"
+  },
+  "LegendaryGhostBlade": {
+   "name": "Ghost Blade",
+   "desc": "+5% Ghost Blade attack leech · Necrotic Surge +15% defense while dashing",
+   "base": "GhostBlade"
+  },
+  "LegendaryGroupHoT": {
+   "name": "Aura of Blessing",
+   "desc": "+15% Aura of Blessing healing · +10% Verdict healing power",
+   "base": "GroupHoT"
+  },
+  "LegendaryHailstoneEmbrace": {
+   "name": "Hailstone Embrace",
+   "desc": "+5% Hailstone Embrace damage · Glacial Spear stuns for 1.5 seconds",
+   "base": "HailstoneEmbrace"
+  },
+  "LegendaryHawkStrike": {
+   "name": "Hawk Strike",
+   "desc": "+10% Hawk Strike damage · +10% Shadow Scythe damage vs Bind",
+   "base": "HawkStrike"
+  },
+  "LegendaryIceNova": {
+   "name": "Ice Nova",
+   "desc": "Ice Nova Weakens targets · +2% Frigid Comet damage per Chilblains stack",
+   "base": "IceNova"
+  },
+  "LegendaryIceSpike": {
+   "name": "Ice Lance",
+   "desc": "Ice Lance +50% defense while dashing · Frozen Ward adds 1 stack of Chilblains",
+   "base": "IceSpike"
+  },
+  "LegendaryIceStorm": {
+   "name": "Hail Storm",
+   "desc": "+15% Hail Storm damage · Frost Spire casts in both directions",
+   "base": "IceStorm"
+  },
+  "LegendaryJumpSlam": {
+   "name": "Jump Slam",
+   "desc": "+20% Jump Slam damage · +20% Lightning Storm defense boost",
+   "base": "JumpSlam"
+  },
+  "LegendaryLeapStrike": {
+   "name": "Meteor Smash",
+   "desc": "Bonus damage per stack of Ignite · +10% Furious Assault damage vs Ignited",
+   "base": "LeapStrike"
+  },
+  "LegendaryLeoneanAura": {
+   "name": "Empyrean Aura",
+   "desc": "+20% Empyrean Aura Defense boost · +15% Celestial Lance dmg vs blind/holy fire",
+   "base": "LeoneanAura"
+  },
+  "LegendaryLightningBomb": {
+   "name": "Lightning Bomb",
+   "desc": "+25% Lightning Bomb damage · +10% Justice Fist damage vs Ignited",
+   "base": "LightningBomb"
+  },
+  "LegendaryMeteor": {
+   "name": "Meteor Channel",
+   "desc": "+1 second Meteor duration · +15% Molten Fist damage",
+   "base": "Meteor"
+  },
+  "LegendaryMistWalk": {
+   "name": "Mist Walk",
+   "desc": "Mist Walk adds 3 stacks of Bleed · Withering Impact adds 2 stacks of Bleed",
+   "base": "MistWalk"
+  },
+  "LegendaryPermafrostClone": {
+   "name": "Permafrost Clone",
+   "desc": "+25% Permafrost Clone dash range · Arctic Blast inflicts Blind",
+   "base": "PermafrostClone"
+  },
+  "LegendaryPlagueBattalion": {
+   "name": "Plague Battalion",
+   "desc": "+6% Plague Battalion damage · +3 second Death Mark duration",
+   "base": "PlagueBattalion"
+  },
+  "LegendaryPoisonCloud": {
+   "name": "Poison Cloud",
+   "desc": "+50% Poison Cloud DoT · +15% Spectral Grasp damage",
+   "base": "PoisonCloud"
+  },
+  "LegendaryPoisonStrike": {
+   "name": "Poison Strike",
+   "desc": "+25% Poison Strike DoT · Hex Blade adds Armor Bane",
+   "base": "PoisonStrike"
+  },
+  "LegendaryPolarSentry": {
+   "name": "Tundra Wyrm",
+   "desc": "+3 second Tundra Wyrm duration · +1% Bitter Blade damage per Chilblains stack",
+   "base": "PolarSentry"
+  },
+  "LegendaryPyromania": {
+   "name": "Pyromania",
+   "desc": "+5%  Pyromania damage · +1% Molten Rain damage per Burn stack",
+   "base": "Pyromania"
+  },
+  "LegendaryQuickStrike": {
+   "name": "Quick Strike",
+   "desc": "+15% Triple Strike damage · +10% Severing Strike damage vs Poison/Hemo",
+   "base": "QuickStrike"
+  },
+  "LegendaryReduceArmor": {
+   "name": "Reduce Armor",
+   "desc": "Armor Breaker reduces speed · +30% Black Storm damage while Stealthed",
+   "base": "ReduceArmor"
+  },
+  "LegendaryRootStrike": {
+   "name": "Root Strike",
+   "desc": "+25% Entanglement base damage · +10% Chaos Wave damage",
+   "base": "RootStrike"
+  },
+  "LegendarySanctum": {
+   "name": "Sanctum",
+   "desc": "+7% Sanctum healing · Divine Word adds 1 stack of Holy Fire",
+   "base": "Sanctum"
+  },
+  "LegendarySeekingBlades": {
+   "name": "Charon's Blades",
+   "desc": "+50% Charon's Blade damage · +10% Vicious Assault damage vs Poison/Hemo",
+   "base": "SeekingBlades"
+  },
+  "LegendarySentinelForm": {
+   "name": "Sentinel Form",
+   "desc": "+5% Sentinel Form melee damage · +5 Retribution maximum hits",
+   "base": "SentinelForm"
+  },
+  "LegendaryShadowArmor": {
+   "name": "Shadow Armor",
+   "desc": "10% Shadow Armor defense · +10% Heart Seeker damage while Stealthed",
+   "base": "ShadowArmor"
+  },
+  "LegendaryShadowBlade": {
+   "name": "Crimson Butterfly",
+   "desc": "+15% Crimson Butterfly damage · +15% Flurry of Daggers damage",
+   "base": "ShadowBlade"
+  },
+  "LegendaryShadowLegion": {
+   "name": "Shadow Legion",
+   "desc": "+2 second Shadow Legion duration · +3 second Black Miasma tendril duration",
+   "base": "ShadowLegion"
+  },
+  "LegendaryShadowStep": {
+   "name": "Shadow Step",
+   "desc": "+15% Shadow Step damage · +10% Dark Chi damage vs Bind",
+   "base": "ShadowStep"
+  },
+  "LegendaryShieldStun": {
+   "name": "Shield Stun",
+   "desc": "Shield Stun adds a stack of Ignite · Juggernaut adds Weaken",
+   "base": "ShieldStun"
+  },
+  "LegendarySkewer": {
+   "name": "Skewer",
+   "desc": "+15% Skewer damage · +15% Subjugate dmg vs blind/holy fire",
+   "base": "Skewer"
+  },
+  "LegendarySmash": {
+   "name": "Smash",
+   "desc": "+15% Smash damage · +15% Flame Axe damage vs Ignited",
+   "base": "Smash"
+  },
+  "LegendarySoulReaver": {
+   "name": "Soul Reaver",
+   "desc": "+7% Soul Reaver life siphon · +10% Butcher's Boon damage vs Bind",
+   "base": "SoulReaver"
+  },
+  "LegendarySoulShatter": {
+   "name": "Soul Shatter",
+   "desc": "+7% Carnifex damage · +15% Devour damage vs Bind",
+   "base": "SoulShatter"
+  },
+  "LegendarySteelCyclone": {
+   "name": "Steel Whirlwind",
+   "desc": "+10% Steel Whirlwind damage · +15% Shadow Rend damage vs Poison/Hemo",
+   "base": "SteelCyclone"
+  },
+  "LegendaryStunStrike": {
+   "name": "Stun Strike",
+   "desc": "+1 second Stun Strike duration · +15% Scorpion Sting damage vs Bind",
+   "base": "StunStrike"
+  },
+  "LegendarySummonDragonSoul": {
+   "name": "Dragon Soul",
+   "desc": "+.7 second Dragon Soul duration · +3 second Firebrand duration",
+   "base": "SummonDragonSoul"
+  },
+  "LegendarySummonGhoul": {
+   "name": "Call the Horde",
+   "desc": "+10% Call the Horde ghoul damage · Lifethirst adds 1 stack of Poison",
+   "base": "SummonGhoul"
+  },
+  "LegendarySummonGuard": {
+   "name": "Call Guard",
+   "desc": "+5 second Call Guard duration · +10% Wail damage vs Poison/Plague",
+   "base": "SummonGuard"
+  },
+  "LegendarySummonRangedGhoul": {
+   "name": "Bolster the Horde",
+   "desc": "Bolster ghoul ranged attacks inflict Poison · +2 second Infestation duration",
+   "base": "SummonRangedGhoul"
+  },
+  "LegendaryTouchHeal": {
+   "name": "Healing Touch",
+   "desc": "+15% Healing Touch healing · +10% Penance dmg vs blind/holy fire",
+   "base": "TouchHeal"
+  },
+  "LegendaryToughShout": {
+   "name": "Guardian Shield",
+   "desc": "+40% Guardian Shield damage · +30% Shockwave defense boost",
+   "base": "ToughShout"
+  },
+  "LegendaryVineLance": {
+   "name": "Vine Lance",
+   "desc": "15% Vine Lance damage · +10% Desecrate damage vs Poison/Plague",
+   "base": "VineLance"
+  },
+  "LegendaryWarcry": {
+   "name": "Warcry",
+   "desc": "+10% Warcry effectiveness · Harm adds 1 stack of Ignite",
+   "base": "Warcry"
+  },
+  "LegendaryWildFire": {
+   "name": "WildFire",
+   "desc": "+10% Wildfire damage · +10% Iridescent Burst damage",
+   "base": "WildFire"
   }
  },
  "magic": {

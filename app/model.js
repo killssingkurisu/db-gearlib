@@ -95,6 +95,7 @@
                 runes: runes.slice(),
                 runeNames: runes.map((r) => (runeInfo[r] ? runeInfo[r].name : r)),
                 skill, skillName: skill ? (skillInfo[skill] ? skillInfo[skill].name : skill) : '',
+                skillBase: skill ? (skillInfo[skill] && skillInfo[skill].base) || skill : '',
                 magic, magicParts, magicName: magic ? (magicInfo[magic] || magicParts.map((m) => MAGIC_PART[m] || m).join(' + ')) : '',
                 sources, special,
                 owners: [], copies: 0, scanned: [], stats: null, statSource: null,

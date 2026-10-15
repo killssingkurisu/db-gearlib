@@ -28,9 +28,11 @@
         const procs = Object.keys(runes).filter((k) => runes[k].kind === 'proc').map((k) => opt(k, runes[k].name));
         const stats = Object.keys(runes).filter((k) => runes[k].kind !== 'proc').map((k) => opt(k, runes[k].name));
 
-        // Skill runes by the classes whose gear carries them.
+        // Skill runes by the classes whose gear carries them. A Legendary's own skill rune
+        // ("LegendaryCleave": Cleave plus a bonus to another skill) is listed under its skill.
+        const skillBase = (k) => (data.skillRunes && data.skillRunes[k] && data.skillRunes[k].base) || k;
         const skillCls = {};
-        for (const row of data.gear) if (row[7]) (skillCls[row[7]] = skillCls[row[7]] || new Set()).add(row[1]);
+        for (const row of data.gear) if (row[7]) (skillCls[skillBase(row[7])] = skillCls[skillBase(row[7])] || new Set()).add(row[1]);
         const skillName = (k) => (data.skillRunes && data.skillRunes[k] ? data.skillRunes[k].name : k);
         const skillGroups = [];
         for (const cls of CLASSES) {
@@ -72,7 +74,7 @@
                 groups: [{ label: 'On critical hit (weapons)', options: procs }, { label: 'Stat', options: stats }],
                 test: (it, v) => it.runes.includes(v),
             },
-            { key: 'skill', label: 'Skill rune', any: 'Any skill rune', groups: skillGroups, test: (it, v) => (v === '-' ? !it.skill : it.skill === v) },
+            { key: 'skill', label: 'Skill rune', any: 'Any skill rune', groups: skillGroups, test: (it, v) => (v === '-' ? !it.skill : it.skillBase === v) },
             {
                 // "=Speed+GoldDrop" is that exact pair; "+GoldDrop" is any item with Gold Find in it.
                 key: 'magic', label: 'Magic', any: 'Any magic', groups: magicGroups,
