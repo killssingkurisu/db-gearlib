@@ -2,7 +2,7 @@
 
 Every gear item in Dungeon Blitz (3,546 of them: 394 per class and rarity) in one CSV-style table, with a dropdown per filter, and every mount (108) with its picture. Dressed like the DB DPS Launcher's Damage Meter. A top bar switches between the two sections, **Gears** and **Mounts**.
 
-Live pages: https://killssingkurisu.github.io/db-gearlib/ (Gears) and https://killssingkurisu.github.io/db-gearlib/mounts.html (Mounts)
+Live pages: https://ksgger.github.io/db-gearlib/ (Gears) and https://ksgger.github.io/db-gearlib/mounts.html (Mounts)
 
 ## Using it
 
